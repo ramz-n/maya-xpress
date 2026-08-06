@@ -4,14 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { MenuIcon, PackageIcon, X } from "lucide-react";
-
-const navLinks: { id: string; key: string }[] = [
-    { id: "#home", key: "Home" },
-    { id: "#about", key: "About" },
-    { id: "#services", key: "Services" },
-    { id: "#reviews", key: "Reviews" },
-    { id: "#contact", key: "Contact" },
-];
+import { navLinks } from "@/constants";
 
 const langOptions = ["EN", "DE", "FR"]
 
@@ -116,7 +109,7 @@ export function Navbar() {
 
             {menuOpen &&
                 <div
-                    className="flex flex-col gap-1 items-center"
+                    className="h-screen z-60 bg-ink text-white flex flex-col gap-1 items-center justify-center"
                 >
                     {navLinks.map((link) => (
                         <button
