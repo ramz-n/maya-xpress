@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { MenuIcon, X } from "lucide-react";
 
 const navLinks: { id: string; key: string }[] = [
     { id: "#home", key: "Home" },
@@ -66,7 +67,7 @@ export function Navbar() {
                 </nav>
 
                 <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="relative hidden sm:block">
+                    <div className="relative hidden lg:block">
                         <button
                             onClick={() => setLangOpen((v) => !v)}
                             onBlur={() => setTimeout(() => setLangOpen(false), 120)}
@@ -103,60 +104,51 @@ export function Navbar() {
                     </div>
 
                     <button
-                        onClick={() => setMenuOpen((v) => !v)}
+                        onClick={() => setMenuOpen(!menuOpen)}
                         className="lg:hidden flex h-10 w-10 items-center justify-center rounded-full border border-white/15"
                         aria-label="Toggle menu"
                         aria-expanded={menuOpen}
                     >
-                        <div className="relative h-3.5 w-4">
-                            <span
-                                className={`absolute left-0 top-0 h-[1.5px] w-full bg-cloud transition-transform duration-300 ${menuOpen ? "translate-y-[6px] rotate-45" : ""
-                                    }`}
-                            />
-                            <span
-                                className={`absolute left-0 bottom-0 h-[1.5px] w-full bg-cloud transition-transform duration-300 ${menuOpen ? "-translate-y-[6px] -rotate-45" : ""
-                                    }`}
-                            />
-                        </div>
+                        {menuOpen ? <X /> : <MenuIcon />}
                     </button>
                 </div>
             </div>
 
-            <div
-                className="hidden lg:hidden flex-col gap-1 border-t border-white/10 bg-ink/97 backdrop-blur-md px-6 pb-6 pt-4"
-                style={{ clipPath: "inset(0% 0% 100% 0%)" }}
-            >
-                {navLinks.map((link) => (
-                    <button
-                        key={link.id}
-                        data-mobile-link
-                        onClick={() => handleNav(link.id)}
-                        className="py-3 text-left font-display text-lg font-semibold text-mist border-b border-white/5"
-                    >
-                        {link.key}
-                    </button>
-                ))}
-                <Link
-                    href="/track"
-                    data-mobile-link
-                    onClick={() => setMenuOpen(false)}
-                    className="py-3 text-left font-display text-lg font-semibold text-amber border-b border-white/5"
+            {menuOpen &&
+                <div
+                    className="flex flex-col gap-1 items-center"
                 >
-                    Track
-                </Link>
-                <div data-mobile-link className="flex gap-2 pt-4">
-                    {langOptions.map((lng) => (
+                    {navLinks.map((link) => (
                         <button
-                            key={lng}
-                            onClick={() => setLang(lng)}
-                            className={`rounded-full border px-4 py-1.5 text-xs font-semibold ${lang === lng ? "border-amber text-amber" : "border-white/15 text-mist/70"
-                                }`}
+                            key={link.id}
+                            data-mobile-link
+                            onClick={() => handleNav(link.id)}
+                            className="py-3 text-left font-display text-lg font-semibold text-mist border-b border-white/5"
                         >
-                            {lng}
+                            {link.key}
                         </button>
                     ))}
-                </div>
-            </div>
+                    <Link
+                        href="/track"
+                        data-mobile-link
+                        onClick={() => setMenuOpen(false)}
+                        className="py-3 text-left font-display text-lg font-semibold text-amber border-b border-white/5"
+                    >
+                        Track
+                    </Link>
+                    <div data-mobile-link className="flex gap-2 pt-4">
+                        {langOptions.map((lng) => (
+                            <button
+                                key={lng}
+                                onClick={() => setLang(lng)}
+                                className={`rounded-full border px-4 py-1.5 text-xs font-semibold ${lang === lng ? "border-amber text-amber" : "border-white/15 text-mist/70"
+                                    }`}
+                            >
+                                {lng}
+                            </button>
+                        ))}
+                    </div>
+                </div>}
         </header>
     )
 }
