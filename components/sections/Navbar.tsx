@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { MenuIcon, X } from "lucide-react";
+import { MenuIcon, PackageIcon, X } from "lucide-react";
 
 const navLinks: { id: string; key: string }[] = [
     { id: "#home", key: "Home" },
@@ -49,7 +49,7 @@ export function Navbar() {
                         <button
                             key={link.id}
                             onClick={() => handleNav(link.id)}
-                            className="px-3.5 py-2 text-sm font-medium text-mist/80 hover:text-cloud transition-colors relative group"
+                            className="cursor-pointer px-3.5 py-2 text-sm font-medium text-mist/80 hover:text-cloud transition-colors relative group"
                         >
                             {link.key}
                             <span className="absolute left-3.5 right-3.5 -bottom-0.5 h-px scale-x-0 bg-gradient-to-r from-amber via-magenta to-violet transition-transform duration-300 group-hover:scale-x-100" />
@@ -123,17 +123,18 @@ export function Navbar() {
                             key={link.id}
                             data-mobile-link
                             onClick={() => handleNav(link.id)}
-                            className="py-3 text-left font-display text-lg font-semibold text-mist border-b border-white/5"
+                            className="py-3 text-left font-display text-lg font-semibold text-mist border-b border-white/5 cursor-pointer"
                         >
                             {link.key}
                         </button>
                     ))}
                     <Link
-                        href="/track"
-                        data-mobile-link
                         onClick={() => setMenuOpen(false)}
-                        className="py-3 text-left font-display text-lg font-semibold text-amber border-b border-white/5"
+                        data-mobile-link
+                        href="/track"
+                        className="ml-1 flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-amber transition-colors hover:border-amber/60"
                     >
+                        <PackageIcon size={20} />
                         Track
                     </Link>
                     <div data-mobile-link className="flex gap-2 pt-4">
