@@ -43,8 +43,8 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-mist/40">Belgium</p>
-                    <p className="mt-3 max-w-[200px] text-sm leading-relaxed text-mist/70">Frank Craeybeckxlaan 83, 2100 Antwerpen</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-mist/40">Location</p>
+                    <p className="mt-3 max-w-[200px] text-sm leading-relaxed text-mist/70">Frank Craeybeckxlaan 83, 2100 Antwerpen, BELGIUM</p>
                 </div>
             </div>
 

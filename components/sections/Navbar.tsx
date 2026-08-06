@@ -2,23 +2,28 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { MenuIcon, PackageIcon, X } from "lucide-react";
 import { navLinks } from "@/constants";
 
-const langOptions = ["EN", "DE", "FR"]
+const langOptions = ["English", "Deutsch", "French"]
 
 export function Navbar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [langOpen, setLangOpen] = useState(false);
-    const [lang, setLang] = useState("EN");
+    const [lang, setLang] = useState("English");
 
     const router = useRouter();
 
     const handleNav = (linkId: string) => {
         setMenuOpen(false);
         router.push(`/${linkId}`);
+    };
+
+    const handleLangSelect = (selectedLng: string) => {
+        setLang(selectedLng);
+        console.log(`Language switched to: ${selectedLng}`);
     };
 
     return (
@@ -81,14 +86,11 @@ export function Navbar() {
                                 {langOptions.map((lng) => (
                                     <li key={lng}>
                                         <button
-                                            onClick={() => {
-                                                setLang(lng);
-                                                setLangOpen(false);
-                                            }}
+                                            onClick={() => handleLangSelect(lng)}
                                             className={`flex w-full items-center justify-between px-4 py-2.5 text-sm hover:bg-white/10 transition-colors ${lang === lng ? "text-amber" : "text-mist"
                                                 }`}
                                         >
-                                            <span className="text-xs">{lng}</span>
+                                            {lng}
                                         </button>
                                     </li>
                                 ))}
