@@ -1,0 +1,162 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+
+const navLinks: { id: string; key: string }[] = [
+    { id: "#home", key: "Home" },
+    { id: "#about", key: "About" },
+    { id: "#services", key: "Services" },
+    { id: "#reviews", key: "Reviews" },
+    { id: "#contact", key: "Contact" },
+];
+
+const langOptions = ["EN", "DE", "FR"]
+
+export function Navbar() {
+
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [langOpen, setLangOpen] = useState(false);
+    const [lang, setLang] = useState("EN");
+
+    const router = useRouter();
+
+    const handleNav = (linkId: string) => {
+        setMenuOpen(false);
+        router.push(`/${linkId}`);
+    };
+
+    return (
+        <header
+            className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500`}
+        >
+            <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8">
+                <Link href="/" className="flex items-center gap-3 group" aria-label="Maya X-press home">
+                    <img
+                        src="/mx_logo_transparent.png"
+                        alt="Maya X-press logo"
+                        className="h-11 w-11 sm:h-12 sm:w-12 drop-shadow-[0_0_18px_rgba(217,2,105,0.45)]"
+                    />
+                    <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-cloud">
+                        Maya <span className="text-gradient">X-press</span>
+                    </span>
+                </Link>
+
+                <nav className="hidden lg:flex items-center gap-1">
+                    {navLinks.map((link) => (
+                        <button
+                            key={link.id}
+                            onClick={() => handleNav(link.id)}
+                            className="px-3.5 py-2 text-sm font-medium text-mist/80 hover:text-cloud transition-colors relative group"
+                        >
+                            {link.key}
+                            <span className="absolute left-3.5 right-3.5 -bottom-0.5 h-px scale-x-0 bg-gradient-to-r from-amber via-magenta to-violet transition-transform duration-300 group-hover:scale-x-100" />
+                        </button>
+                    ))}
+                    <Link
+                        href="/track"
+                        className="ml-1 flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-amber transition-colors hover:border-amber/60"
+                    >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M4 8l8-4 8 4-8 4-8-4Zm0 0v8l8 4m0-8v8m8-12v8l-8 4" />
+                        </svg>
+                        Track
+                    </Link>
+                </nav>
+
+                <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="relative hidden sm:block">
+                        <button
+                            onClick={() => setLangOpen((v) => !v)}
+                            onBlur={() => setTimeout(() => setLangOpen(false), 120)}
+                            className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-mist hover:border-amber/60 transition-colors"
+                            aria-haspopup="listbox"
+                            aria-expanded={langOpen}
+                        >
+                            {lang}
+                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className={`transition-transform ${langOpen ? "rotate-180" : ""}`}>
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                        {langOpen && (
+                            <ul
+                                role="listbox"
+                                className="absolute right-0 mt-2 w-36 overflow-hidden rounded-xl border border-white/10 bg-navy/95 backdrop-blur-md shadow-glow"
+                            >
+                                {langOptions.map((lng) => (
+                                    <li key={lng}>
+                                        <button
+                                            onClick={() => {
+                                                setLang(lng);
+                                                setLangOpen(false);
+                                            }}
+                                            className={`flex w-full items-center justify-between px-4 py-2.5 text-sm hover:bg-white/10 transition-colors ${lang === lng ? "text-amber" : "text-mist"
+                                                }`}
+                                        >
+                                            <span className="text-xs">{lng}</span>
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
+
+                    <button
+                        onClick={() => setMenuOpen((v) => !v)}
+                        className="lg:hidden flex h-10 w-10 items-center justify-center rounded-full border border-white/15"
+                        aria-label="Toggle menu"
+                        aria-expanded={menuOpen}
+                    >
+                        <div className="relative h-3.5 w-4">
+                            <span
+                                className={`absolute left-0 top-0 h-[1.5px] w-full bg-cloud transition-transform duration-300 ${menuOpen ? "translate-y-[6px] rotate-45" : ""
+                                    }`}
+                            />
+                            <span
+                                className={`absolute left-0 bottom-0 h-[1.5px] w-full bg-cloud transition-transform duration-300 ${menuOpen ? "-translate-y-[6px] -rotate-45" : ""
+                                    }`}
+                            />
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div
+                className="hidden lg:hidden flex-col gap-1 border-t border-white/10 bg-ink/97 backdrop-blur-md px-6 pb-6 pt-4"
+                style={{ clipPath: "inset(0% 0% 100% 0%)" }}
+            >
+                {navLinks.map((link) => (
+                    <button
+                        key={link.id}
+                        data-mobile-link
+                        onClick={() => handleNav(link.id)}
+                        className="py-3 text-left font-display text-lg font-semibold text-mist border-b border-white/5"
+                    >
+                        {link.key}
+                    </button>
+                ))}
+                <Link
+                    href="/track"
+                    data-mobile-link
+                    onClick={() => setMenuOpen(false)}
+                    className="py-3 text-left font-display text-lg font-semibold text-amber border-b border-white/5"
+                >
+                    Track
+                </Link>
+                <div data-mobile-link className="flex gap-2 pt-4">
+                    {langOptions.map((lng) => (
+                        <button
+                            key={lng}
+                            onClick={() => setLang(lng)}
+                            className={`rounded-full border px-4 py-1.5 text-xs font-semibold ${lang === lng ? "border-amber text-amber" : "border-white/15 text-mist/70"
+                                }`}
+                        >
+                            {lng}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </header>
+    )
+}

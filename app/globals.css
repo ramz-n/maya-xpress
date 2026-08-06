@@ -1,1 +1,109 @@
 @import "tailwindcss";
+
+@theme {
+    --font-display: var(--font-heading-nf), "Space Grotesk", sans-serif;
+    --font-body: var(--font-body-nf), "Manrope", sans-serif;
+
+    --color-ink: #0f0730;
+    --color-navy: #1a0a4d;
+    --color-navy-light: #290c69;
+    --color-purple-dark: #4e1b9c;
+    --color-violet: #75178f;
+    --color-magenta: #d90269;
+    --color-amber: #fa8a0c;
+    --color-mist: #f4effc;
+    --color-cloud: #faf8ff;
+
+    --shadow-glow: 0 0 60px rgba(217, 2, 105, 0.25);
+}
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--color-ink);
+        color: var(--color-mist);
+        font-family: var(--font-body);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--font-display);
+        letter-spacing: -0.02em;
+    }
+
+    ::selection {
+        background: var(--color-magenta);
+        color: white;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--color-ink);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--color-magenta), var(--color-violet));
+        border-radius: 10px;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-amber);
+        outline-offset: 3px;
+    }
+}
+
+@layer components {
+    .no-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .text-gradient {
+        background: linear-gradient(92deg, var(--color-amber) 0%, var(--color-magenta) 45%, var(--color-violet) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .eyebrow {
+        font-family: var(--font-display);
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .btn-gradient {
+        background: linear-gradient(90deg, var(--color-magenta), var(--color-amber));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
