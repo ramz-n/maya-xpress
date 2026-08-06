@@ -9,17 +9,10 @@ const Hero = () => {
     return (
         <section
             id="home"
-            className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink pt-24"
+            className="relative flex min-h-screen items-center overflow-hidden bg-ink pt-24"
         >
-            <div className="absolute inset-0" data-speed="0.85">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--color-navy-light)_0%,_var(--color-ink)_55%)]" />
-                <div className="hero-orb-1 absolute -left-24 top-16 h-72 w-72 rounded-full bg-magenta/25 blur-[100px]" />
-                <div className="hero-orb-2 absolute right-0 bottom-0 h-96 w-96 rounded-full bg-violet/25 blur-[120px]" />
-                <div className="absolute right-10 top-24 h-64 w-64 rounded-full bg-amber/15 blur-[100px]" />
-            </div>
-
             <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-6 pb-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
-                <div>
+                <div className="text-center md:text-left">
                     <h1 className="font-display text-[2.6rem] leading-[1.05] font-bold text-3xl md:text-6xl">
                         <span className="block overflow-hidden pb-1 text-cloud">
                             Speed you can trust,
