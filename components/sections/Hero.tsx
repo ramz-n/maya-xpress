@@ -49,12 +49,12 @@ const Hero = () => {
                             Speed you can trust,
                         </span>
                         <span className="block overflow-hidden pb-1 text-gradient">
-                            service you deserve.
+                            Sevice you deserve.
                         </span>
                     </h1>
 
                     <p className="hero-sub mt-7 max-w-xl text-base leading-relaxed text-mist/75 sm:text-lg">
-                        Parcels, payments, and everyday essentials under one roof. Maya X-press is your local counter for bpost, DHL, National Lottery, money transfers, and more — delivering happiness, every time.
+                        Your trusted local store in Antwerp for lottery tickets, post services like BPOST & DHL, RIA money transfers, gift cards, Hallmark cards, snacks & drinks and many more.
                     </p>
 
                     <form
