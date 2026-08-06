@@ -11,7 +11,7 @@ const Hero = () => {
             id="home"
             className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink pt-24"
         >
-            <div className="pointer-events-none absolute inset-0" data-speed="0.85">
+            <div className="absolute inset-0" data-speed="0.85">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--color-navy-light)_0%,_var(--color-ink)_55%)]" />
                 <div className="hero-orb-1 absolute -left-24 top-16 h-72 w-72 rounded-full bg-magenta/25 blur-[100px]" />
                 <div className="hero-orb-2 absolute right-0 bottom-0 h-96 w-96 rounded-full bg-violet/25 blur-[120px]" />
@@ -29,13 +29,13 @@ const Hero = () => {
                         </span>
                     </h1>
 
-                    <p className="hero-sub mt-7 max-w-xl text-base leading-relaxed text-mist/75 sm:text-lg">
+                    <p className="mt-7 max-w-xl text-base leading-relaxed text-mist/75 sm:text-lg">
                         Your trusted local store in Antwerp for lottery tickets, post services like BPOST & DHL, RIA money transfers, gift cards, Hallmark cards, snacks & drinks and many more.
                     </p>
 
                     <form
                         onSubmit={() => undefined}
-                        className="hero-track-card mt-8 flex max-w-xl flex-col gap-3 rounded-2xl border border-white/12 bg-white/[0.05] p-3 backdrop-blur-sm sm:flex-row sm:items-center sm:p-2 sm:pl-5"
+                        className="mt-8 flex max-w-xl flex-col gap-3 rounded-2xl border border-white/12 bg-white/[0.05] p-3 backdrop-blur-sm sm:flex-row sm:items-center sm:p-2 sm:pl-5"
                     >
                         <div className="flex flex-1 items-center gap-2.5">
                             <Package className="text-amber" />
@@ -54,7 +54,7 @@ const Hero = () => {
                         </button>
                     </form>
 
-                    <div className="hero-cta mt-7 flex flex-wrap items-center gap-4">
+                    <div className="mt-7 flex flex-wrap items-center gap-4">
                         <button
                             onClick={() => undefined}
                             className="cursor-pointer rounded-full bg-navy-light px-7 py-3.5 text-sm font-semibold text-cloud transition-colors hover:text-amber"

@@ -83,14 +83,6 @@
         color: transparent;
     }
 
-    .eyebrow {
-        font-family: var(--font-display);
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        font-size: 0.75rem;
-        font-weight: 600;
-    }
-
     .btn-gradient {
         background: linear-gradient(90deg, var(--color-magenta), var(--color-amber));
     }
