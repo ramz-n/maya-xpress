@@ -25,3 +25,9 @@ export const whyChooseUs: { title: string; icon: LucideIcon }[] = [
     { title: "Secure Service", icon: ShieldCheckIcon },
     { title: "Customer Satisfaction", icon: SmileIcon },
 ]
+
+export const reviews: { quote: string; name: string; location: string, rating: number }[] = [
+    { quote: "Fantastic neighborhood store! Always friendly and helpful. The best lottery shop in Antwerp", name: "Marie V.", location: "Antwerp Center", rating: 5 },
+    { quote: "Fast bpost service and very reliable for money transfers. Recommended!", name: "Peter D.", location: "Borgerhout", rating: 4 },
+    { quote: "Cool place to hang around and send DHL parcels. Excellent service!", name: "Sophie M.", location: "Berchem", rating: 5 }
+]
