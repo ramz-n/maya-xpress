@@ -16,12 +16,12 @@ const Reviews = () => {
 
             <div className="relative mt-16">
                 <div
-                    className="flex gap-6 px-6 pb-6 sm:px-8 justify-center"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 pb-6 sm:px-8 justify-center"
                 >
                     {reviews.map((review) => (
                         <article
                             key={review.name}
-                            className="review-card w-75 rounded-3xl border border-white/10 bg-white/[0.04] p-7 sm:w-[340px]"
+                            className="w-75 rounded-3xl border border-violet/50 bg-violet/30 p-7 sm:w-[340px]"
                         >
 
                             <div className="flex gap-1">

@@ -49,7 +49,7 @@ const Hero = () => {
                         </button>
                     </form>
 
-                    <div className="mt-7 flex flex-wrap items-center gap-4">
+                    <div className="mt-7 flex items-center justify-center gap-1 md:gap-4">
                         <button
                             onClick={() => router.push("#services")}
                             className="cursor-pointer rounded-full bg-violet px-7 py-3.5 text-sm font-semibold text-cloud transition-colors hover:bg-violet/50"
