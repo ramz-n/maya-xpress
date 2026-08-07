@@ -23,23 +23,19 @@ export function Navbar() {
 
     const handleLangSelect = (selectedLng: string) => {
         setLang(selectedLng);
-        console.log(`Language switched to: ${selectedLng}`);
     };
 
     return (
         <header
-            className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 bg-ink`}
+            className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 bg-cloud/90 backdrop-blur-sm`}
         >
             <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8">
                 <Link href="/" className="flex items-center gap-3 group" aria-label="Maya X-press home">
                     <img
-                        src="/mx_logo_transparent.png"
+                        src="/logo.png"
                         alt="Maya X-press logo"
-                        className="h-11 w-11 sm:h-12 sm:w-12 drop-shadow-[0_0_18px_rgba(217,2,105,0.45)]"
+                        className="h-12 w-20 drop-shadow-[0_0_18px_rgba(217,2,105,0.45)]"
                     />
-                    <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-cloud">
-                        Maya <span className="text-gradient">X-press</span>
-                    </span>
                 </Link>
 
                 <nav className="hidden lg:flex items-center gap-1">
@@ -47,15 +43,15 @@ export function Navbar() {
                         <button
                             key={link.id}
                             onClick={() => handleNav(link.id)}
-                            className="cursor-pointer px-3.5 py-2 text-sm font-medium text-mist/80 hover:text-cloud transition-colors relative group"
+                            className="cursor-pointer px-3.5 py-2 text-sm font-medium text-ink hover:text-violet transition-colors relative group"
                         >
                             {link.key}
-                            <span className="absolute left-3.5 right-3.5 -bottom-0.5 h-px scale-x-0 bg-gradient-to-r from-amber via-magenta to-violet transition-transform duration-300 group-hover:scale-x-100" />
+                            <span className="absolute left-3.5 right-3.5 -bottom-0.5 h-px scale-x-0 bg-linear-to-r from-amber via-magenta to-violet transition-transform duration-300 group-hover:scale-x-100" />
                         </button>
                     ))}
                     <Link
                         href="/track"
-                        className="ml-1 flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-amber transition-colors hover:border-amber/60"
+                        className="ml-1 flex items-center gap-1.5 rounded-full border border-violet px-4 py-2 text-sm font-semibold text-violet transition-colors hover:border-magenta/60 hover:text-magenta"
                     >
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M4 8l8-4 8 4-8 4-8-4Zm0 0v8l8 4m0-8v8m8-12v8l-8 4" />
@@ -69,7 +65,7 @@ export function Navbar() {
                         <button
                             onClick={() => setLangOpen((v) => !v)}
                             onBlur={() => setTimeout(() => setLangOpen(false), 120)}
-                            className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-mist hover:border-amber/60 transition-colors"
+                            className="flex items-center gap-1.5 rounded-full border border-navy bg-ink px-3.5 py-1.5 text-xs font-semibold tracking-wide text-mist hover:border-magenta/60 transition-colors"
                             aria-haspopup="listbox"
                             aria-expanded={langOpen}
                         >
@@ -100,7 +96,7 @@ export function Navbar() {
 
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
-                        className="lg:hidden flex h-10 w-10 items-center justify-center rounded-full border border-white/15"
+                        className="lg:hidden flex h-10 w-10 items-center justify-center rounded-full border border-navy bg-navy"
                         aria-label="Toggle menu"
                         aria-expanded={menuOpen}
                     >

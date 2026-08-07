@@ -1,10 +1,12 @@
 "use client";
-import { Package, Package2 } from "lucide-react";
+import { Package } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const Hero = () => {
 
     const [trackingCode, setTrackingCode] = useState("");
+    const router = useRouter();
 
     return (
         <section
@@ -41,7 +43,7 @@ const Hero = () => {
                         </div>
                         <button
                             type="submit"
-                            className="shrink-0 rounded-xl bg-gradient-to-r from-magenta to-amber px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform hover:scale-[1.03]"
+                            className="cursor-pointer shrink-0 rounded-xl bg-linear-to-r from-magenta to-violet px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform hover:scale-[1.03]"
                         >
                             Submit
                         </button>
@@ -49,8 +51,8 @@ const Hero = () => {
 
                     <div className="mt-7 flex flex-wrap items-center gap-4">
                         <button
-                            onClick={() => undefined}
-                            className="cursor-pointer rounded-full bg-navy-light px-7 py-3.5 text-sm font-semibold text-cloud transition-colors hover:text-amber"
+                            onClick={() => router.push("#services")}
+                            className="cursor-pointer rounded-full bg-violet px-7 py-3.5 text-sm font-semibold text-cloud transition-colors hover:bg-violet/50"
                         >
                             Explore Our Services
                         </button>

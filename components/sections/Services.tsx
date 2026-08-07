@@ -12,7 +12,7 @@ const Services = () => {
                 <p className="mt-5 text-base text-mist/70 sm:text-lg">Maya Express is an authorised service point for the partners you already know and trust.</p>
             </div>
 
-            <div className="relative mt-16 overflow-hidden py-10 lg:h-[90vh] lg:py-0">
+            <div className="relative overflow-hidden lg:h-[90vh] lg:py-0">
                 <div className="flex h-full items-center">
                     <div
                         className="flex w-max flex-col gap-6 px-6 sm:px-8 lg:flex-row lg:gap-8 lg:px-[8vw]"
@@ -23,7 +23,7 @@ const Services = () => {
 
                             return <article
                                 key={service.title}
-                                className="cursor-pointer flex w-full flex-col justify-between overflow-hidden rounded-4xl border border-white/10 bg-linear-to-br from-white/15 to-white/5 p-8 transition-colors hover:border-amber/40 lg:w-[calc(100%/3)]"
+                                className="cursor-pointer flex w-full flex-col justify-between overflow-hidden rounded-4xl border border-violet/50 bg-linear-to-br from-white/15 to-white/5 p-8 transition-colors hover:border-amber lg:w-[calc(100%/3)]"
                             >
                                 <div className="flex flex-col items-center justify-center gap-3">
                                     <span className="font-display text-sm font-semibold text-mist/40">{service.title}</span>
@@ -39,7 +39,16 @@ const Services = () => {
                 </div>
             </div>
 
-            <div className="strip-row mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 pb-28 pt-10 sm:grid-cols-3 sm:px-8 sm:pb-36">
+            <div className="mx-auto max-w-4xl px-6">
+                <div className="grid grid-cols-2 my-10 md:mt-0 md:pb-10 md:grid-cols-4 gap-4">
+                    <img src={"/bpost1.png"} alt="bpost" className="h-full w-full object-contain rounded-2xl shadow-2xl shadow-violet shadow" />
+                    <img src={"/dhl.png"} alt="dhl" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-violet shadow" />
+                    <img src={"/rialogo.png"} alt="bpost" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-violet shadow" />
+                    <img src={"/lottery.png"} alt="bpost" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-violet shadow" />
+                </div>
+            </div>
+
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 pb-28 pt-10 sm:grid-cols-3 sm:px-8 sm:pb-36">
                 <p className="col-span-full mb-2 text-center font-display text-sm font-semibold uppercase tracking-[0.2em] text-mist/60">
                     Why people choose our store
                 </p>

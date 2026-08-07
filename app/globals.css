@@ -77,14 +77,14 @@
     }
 
     .text-gradient {
-        background: linear-gradient(92deg, var(--color-amber) 0%, var(--color-magenta) 45%, var(--color-violet) 100%);
+        background: linear-gradient(92deg, var(--color-amber) 0%, var(--color-magenta) 30%, var(--color-violet) 80%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
     }
 
     .btn-gradient {
-        background: linear-gradient(90deg, var(--color-magenta), var(--color-amber));
+        background: linear-gradient(92deg, var(--color-amber) 0%, var(--color-magenta) 30%, var(--color-violet) 80%);
     }
 }
 
