@@ -49,7 +49,7 @@ export function Navbar() {
                             <span className="absolute left-3.5 right-3.5 -bottom-0.5 h-px scale-x-0 bg-linear-to-r from-amber via-magenta to-violet transition-transform duration-300 group-hover:scale-x-100" />
                         </button>
                     ))}
-                    <Link
+                    {/* <Link
                         href="/track"
                         className="ml-1 flex items-center gap-1.5 rounded-full border border-violet px-4 py-2 text-sm font-semibold text-violet transition-colors hover:border-magenta/60 hover:text-magenta"
                     >
@@ -57,7 +57,7 @@ export function Navbar() {
                             <path d="M4 8l8-4 8 4-8 4-8-4Zm0 0v8l8 4m0-8v8m8-12v8l-8 4" />
                         </svg>
                         Track
-                    </Link>
+                    </Link> */}
                 </nav>
 
                 <div className="flex items-center gap-2 sm:gap-3">
@@ -119,7 +119,7 @@ export function Navbar() {
                             {link.key}
                         </button>
                     ))}
-                    <Link
+                    {/*  <Link
                         onClick={() => setMenuOpen(false)}
                         data-mobile-link
                         href="/track"
@@ -127,7 +127,7 @@ export function Navbar() {
                     >
                         <PackageIcon size={20} />
                         Track
-                    </Link>
+                    </Link> */}
                     <div data-mobile-link className="flex gap-2 pt-4">
                         {langOptions.map((lng) => (
                             <button

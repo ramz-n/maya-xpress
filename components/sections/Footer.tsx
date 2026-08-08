@@ -13,7 +13,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="relative border-t border-violet/50 bg-navy/50 px-6 pb-8 pt-16 sm:px-8">
+        <footer className="relative border-t border-violet/50 bg-navy px-6 pb-8 pt-16 sm:px-8">
             <div className="mx-auto flex max-w-7xl flex-col gap-10 sm:flex-row sm:justify-between">
                 <div className="max-w-sm">
                     <Link href="/" className="flex items-center gap-3 group" aria-label="Maya X-press home">
@@ -40,11 +40,11 @@ const Footer = () => {
                                 </button>
                             </li>
                         ))}
-                        <li>
+                        {/* <li>
                             <Link href="/track" className="text-amber hover:underline">
                                 Track
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 <div>

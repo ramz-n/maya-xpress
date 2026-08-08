@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Space_Grotesk, Manrope } from "next/font/google";
 import "./globals.css";
+import IconGradient from "@/components/ui/IconGradient";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading-nf",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${spaceGrotesk.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <IconGradient />
         {children}
       </body>
     </html>

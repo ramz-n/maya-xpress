@@ -4,18 +4,18 @@ import { Clock, MapPinIcon, MoveUpRightIcon, Smartphone, } from "lucide-react";
 
 const Contact = () => {
     return (
-        <section id="contact" className="relative bg-ink py-28 sm:py-36">
+        <section id="contact" className="relative py-28 sm:py-36">
             <div className="relative mx-auto max-w-4xl px-6 text-center sm:px-8">
                 <p className="text-amber">Contact Us</p>
-                <h2 className="mt-4 font-display text-4xl font-bold text-cloud sm:text-5xl">Visit Maya X-press in Antwerp</h2>
-                <p className="mt-5 text-base text-mist/70 sm:text-lg"> Contact us for more information.</p>
+                <h2 className="mt-4 font-display text-4xl font-bold text-gradient sm:text-5xl">Visit Maya X-press in Antwerp</h2>
+                <p className="mt-5 text-base text-navy/75 sm:text-lg"> Contact us for more information.</p>
             </div>
 
             <div className="relative mx-auto mt-16 grid items-center max-w-6xl grid-cols-1 gap-8 px-6 sm:px-8 lg:grid-cols-2">
-                <div className="flex flex-col gap-6">
-                    <div className="rounded-3xl border border-violet bg-violet/20 p-8">
+                <div className="flex flex-col gap-6 shadow-glow">
+                    <div className="rounded-3xl border border-violet bg-navy p-8">
                         <div className="flex items-start gap-4">
-                            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-linear-to-br from-magenta to-violet">
+                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-magenta">
                                 <MapPinIcon className="h-5 w-5" color="#ffffff" />
                             </div>
                             <div>
@@ -34,7 +34,7 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="mt-7 flex items-start gap-4 border-t border-violet pt-7">
+                        <div className="mt-7 flex items-start gap-4 border-t border-cloud pt-7">
                             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet to-purple-dark">
                                 <Clock className="h-5 w-5" color="#ffffff" />
                             </div>
@@ -47,7 +47,7 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="mt-7 flex items-start gap-4 border-t border-violet pt-7">
+                        <div className="mt-7 flex items-start gap-4 border-t border-mist pt-7">
                             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet to-magenta">
                                 <Smartphone className="h-5 w-5" color="#ffffff" />
                             </div>
@@ -60,7 +60,7 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className="relative flex-1 overflow-hidden rounded-3xl border border-violet">
+                <div className="relative flex-1 overflow-hidden rounded-3xl border border-mist shadow-glow">
                     <iframe title="Maya Xpress Store" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d624.6823424090604!2d4.458337564391002!3d51.224060929862425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f7830a54f197%3A0x62b151a89a172eaa!2sFrank%20Craeybeckxlaan%2083%2C%202100%20Antwerpen%2C%20Belgium!5e0!3m2!1sen!2snp!4v1786075570762!5m2!1sen!2snp" width="600" height="450" style={{ border: "0" }} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>

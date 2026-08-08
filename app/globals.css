@@ -27,7 +27,7 @@
     }
 
     body {
-        background-color: var(--color-ink);
+        background-color: var(--color-mist);
         color: var(--color-mist);
         font-family: var(--font-body);
         -webkit-font-smoothing: antialiased;
@@ -85,6 +85,10 @@
 
     .btn-gradient {
         background: linear-gradient(92deg, var(--color-amber) 0%, var(--color-magenta) 30%, var(--color-violet) 80%);
+    }
+
+    .icon-gradient {
+        stroke: url(#icon-gradient);
     }
 }
 

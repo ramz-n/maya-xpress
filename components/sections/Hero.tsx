@@ -1,36 +1,56 @@
 "use client";
-import { Package } from "lucide-react";
+import { useGSAP } from "@gsap/react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
 
 const Hero = () => {
 
-    const [trackingCode, setTrackingCode] = useState("");
+    /*     const [trackingCode, setTrackingCode] = useState(""); */
     const router = useRouter();
+
+    const sectionRef = useRef<HTMLElement>(null);
+    const heading1Ref = useRef<HTMLSpanElement>(null);
+    const heading2Ref = useRef<HTMLSpanElement>(null);
+    const logoRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({ delay: 0.5, defaults: { duration: 1, ease: "power3.out" } });
+        const split1 = new SplitText(heading1Ref.current, { type: "words,chars" });
+
+        tl.from(logoRef.current, { scale: 0.4, opacity: 0, rotate: -25, duration: 1, ease: "back.out(1.6)" })
+            .from(split1.chars, { yPercent: 130, opacity: 0, duration: 0.9, stagger: 0.02 }, "-=0.55")
+            .from(heading2Ref.current, { yPercent: 130, opacity: 0, duration: 0.9, ease: "power4.out" }, "-=0.65")
+            .from(".sub-heading", { y: 24, opacity: 0, duration: 0.7 }, "-=0.2")
+            .from(".buttons-cta", { x: 24, opacity: 0, duration: 0.7 }, "-=0.5")
+        return () => split1.revert();
+    }, { scope: sectionRef, dependencies: [] });
 
     return (
         <section
+            ref={sectionRef}
             id="home"
-            className="relative flex min-h-screen items-center overflow-hidden bg-ink pt-24"
+            className="relative flex min-h-screen items-center overflow-hidden pt-24"
         >
             <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-6 pb-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
                 <div className="text-center md:text-left">
-                    <h1 className="font-display text-[2.6rem] leading-[1.05] font-bold text-3xl md:text-6xl">
-                        <span className="block overflow-hidden pb-1 text-cloud">
+                    <h1 className="font-display leading-[1.05] font-bold text-3xl md:text-6xl">
+                        <span ref={heading1Ref} className="block overflow-hidden pb-1 text-violet">
                             Speed you can trust,
                         </span>
-                        <span className="block overflow-hidden pb-1 text-gradient">
+                        <span ref={heading2Ref} className="block overflow-hidden pb-1 text-gradient">
                             Sevice you deserve.
                         </span>
                     </h1>
 
-                    <p className="mt-7 max-w-xl text-base leading-relaxed text-mist/75 sm:text-lg">
+                    <p className="sub-heading mt-7 max-w-xl text-base leading-relaxed text-ink/75 sm:text-lg">
                         Your trusted local store in Antwerp for lottery tickets, post services like BPOST & DHL, RIA money transfers, gift cards, Hallmark cards, snacks & drinks and many more.
                     </p>
 
-                    <form
+                    {/* <form
                         onSubmit={() => undefined}
-                        className="mt-8 flex max-w-xl flex-col gap-3 rounded-2xl border border-white/12 bg-white/[0.05] p-3 backdrop-blur-sm sm:flex-row sm:items-center sm:p-2 sm:pl-5"
+                        className="track mt-8 flex max-w-xl flex-col gap-3 rounded-2xl border border-white/12 bg-white/[0.05] p-3 backdrop-blur-sm sm:flex-row sm:items-center sm:p-2 sm:pl-5"
                     >
                         <div className="flex flex-1 items-center gap-2.5">
                             <Package className="text-amber" />
@@ -47,9 +67,9 @@ const Hero = () => {
                         >
                             Submit
                         </button>
-                    </form>
+                    </form> */}
 
-                    <div className="mt-7 flex items-center justify-center gap-1 md:gap-4">
+                    <div className="buttons-cta mt-7 flex items-center md:place-content-start justify-center gap-1 md:gap-4">
                         <button
                             onClick={() => router.push("#services")}
                             className="cursor-pointer rounded-full bg-violet px-7 py-3.5 text-sm font-semibold text-cloud transition-colors hover:bg-violet/50"
@@ -57,15 +77,15 @@ const Hero = () => {
                             Explore Our Services
                         </button>
                         <button
-                            onClick={() => undefined}
-                            className="cursor-pointer rounded-full border border-violet px-7 py-3.5 text-sm font-semibold text-mist transition-colors hover:border-amber/60 hover:text-amber"
+                            onClick={() => router.push("#contact")}
+                            className="cursor-pointer rounded-full border border-violet px-7 py-3.5 text-sm font-semibold text-violet transition-colors hover:border-amber hover:text-amber"
                         >
                             Visit Our Store
                         </button>
                     </div>
                 </div>
 
-                <div className="hidden lg:block relative mx-auto items-center justify-center">
+                <div ref={logoRef} className="hidden lg:block relative mx-auto items-center justify-center">
                     <div className="absolute h-64 w-64 rounded-full bg-magenta/30 blur-[80px] sm:h-80 sm:w-80" />
                     <img
                         src="/mx_logo_transparent.png"
