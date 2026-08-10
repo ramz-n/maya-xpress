@@ -58,7 +58,7 @@ const About = () => {
         <section
             ref={aboutRef}
             id="about"
-            className="relative bg-purple-dark -mt-40 pt-40 pb-70"
+            className="relative bg-purple-dark -mt-40 pt-30 pb-70"
             style={{
                 clipPath: "polygon(0 6%, 100% 0, 100% 100%, 0 100%)",
             }}
