@@ -15,14 +15,14 @@ const Contact = () => {
 
             <div className="relative mx-auto mt-16 grid items-center max-w-6xl grid-cols-1 gap-8 px-6 sm:px-8 lg:grid-cols-2">
                 <div className="flex flex-col gap-6 shadow-glow">
-                    <div className="rounded-3xl border border-violet bg-navy p-8">
+                    <div className="rounded-3xl border border-violet bg-navy p-5 md:p-8">
                         <div className="flex items-start gap-4">
                             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-magenta">
                                 <MapPinIcon className="h-5 w-5" color="#ffffff" />
                             </div>
                             <div>
                                 <p className="text-xs font-semibold uppercase tracking-wider text-mist/50">{t.contact.address}</p>
-                                <p className="mt-1 font-display text-lg font-semibold text-cloud">Frank Craeybeckxlaan 83, 2100 Antwerpen, Belgium
+                                <p className="mt-1 font-display text-sm font-semibold text-cloud">Frank Craeybeckxlaan 83, 2100 Antwerpen, Belgium
                                 </p>
                                 <a
                                     href="https://maps.app.goo.gl/8zbiksGdZL7YLd939"
@@ -43,15 +43,15 @@ const Contact = () => {
                             <div className="flex-1">
                                 <p className="text-xs font-semibold uppercase tracking-wider text-mist/50">{t.contact.hours}</p>
 
-                                <p>
+                                <p className="text-sm">
                                     {t.contact.weekday}: <strong>9:00AM - 7:00PM</strong>
                                 </p>
 
-                                <p>
+                                <p className="text-sm">
                                     {t.contact.saturday}: <strong>9:00AM - 5:00PM</strong>
                                 </p>
 
-                                <p>
+                                <p className="text-sm">
                                     {t.contact.sunday}: <strong>{t.contact.closed}</strong>
                                 </p>
                             </div>
@@ -64,7 +64,7 @@ const Contact = () => {
                             <div className="flex-1">
                                 <p className="text-xs font-semibold uppercase tracking-wider text-mist/50">{t.contact.phone}</p>
 
-                                <p>+32 469754412</p>
+                                <p className="text-sm">+32 469754412</p>
                             </div>
                         </div>
                     </div>
