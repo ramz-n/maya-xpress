@@ -4,9 +4,11 @@ import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Hero = () => {
 
+    const { t } = useLanguage();
     /*     const [trackingCode, setTrackingCode] = useState(""); */
     const router = useRouter();
 
@@ -37,15 +39,15 @@ const Hero = () => {
                 <div className="text-center md:text-left">
                     <h1 className="font-display leading-[1.05] font-bold text-3xl md:text-6xl">
                         <span ref={heading1Ref} className="block overflow-hidden pb-1 text-violet">
-                            Speed you can trust,
+                            {t.hero.title}
                         </span>
                         <span ref={heading2Ref} className="block overflow-hidden pb-1 text-gradient">
-                            Sevice you deserve.
+                            {t.hero.subtitle}
                         </span>
                     </h1>
 
                     <p className="sub-heading mt-7 max-w-xl text-base leading-relaxed text-ink/75 sm:text-lg">
-                        Your trusted local store in Antwerp for lottery tickets, post services like BPOST & DHL, RIA money transfers, gift cards, Hallmark cards, snacks & drinks and many more.
+                        {t.hero.description}
                     </p>
 
                     {/* <form
@@ -74,13 +76,13 @@ const Hero = () => {
                             onClick={() => router.push("#services")}
                             className="cursor-pointer rounded-full bg-violet px-7 py-3.5 text-sm font-semibold text-cloud transition-colors hover:bg-violet/50"
                         >
-                            Explore Our Services
+                            {t.hero.exploreBtn}
                         </button>
                         <button
                             onClick={() => router.push("#contact")}
                             className="cursor-pointer rounded-full border border-violet px-7 py-3.5 text-sm font-semibold text-violet transition-colors hover:border-amber hover:text-amber"
                         >
-                            Visit Our Store
+                            {t.hero.visitBtn}
                         </button>
                     </div>
                 </div>
