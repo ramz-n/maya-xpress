@@ -19,7 +19,7 @@ const Reviews = () => {
             quote: t.reviews.review2,
             name: "Peter D.",
             location: t.reviews.review2Location,
-            rating: 4,
+            rating: 5,
         },
         {
             quote: t.reviews.review3,
@@ -44,7 +44,14 @@ const Reviews = () => {
     }, {})
 
     return (
-        <section ref={reviewsRef} id="reviews" className="relative bg-purple-dark py-28 sm:py-36">
+        <section
+            ref={reviewsRef}
+            id="reviews"
+            className="relative bg-purple-dark -mt-40 pt-30 pb-40"
+            style={{
+                clipPath: "polygon(0 6%, 100% 0, 100% 100%, 0 100%)",
+            }}
+        >
             <div className="relative mx-auto max-w-4xl px-6 text-center sm:px-8">
                 <p className="reviews-title text-amber">{t.reviews.badge}</p>
                 <h2 className="reviews-heading mt-4 font-display text-4xl font-bold text-cloud sm:text-5xl">{t.reviews.title}</h2>
@@ -58,7 +65,7 @@ const Reviews = () => {
                     {reviews.map((review) => (
                         <article
                             key={review.name}
-                            className="w-75 rounded-3xl border border-navy bg-navy p-7 sm:w-[340px]"
+                            className="w-75 rounded-3xl border border-navy bg-navy p-7 sm:w-85"
                         >
 
                             <div className="flex gap-1">
@@ -69,7 +76,7 @@ const Reviews = () => {
 
                             <p className="mt-5 text-sm leading-relaxed text-mist/85 sm:text-base">“{review.quote}”</p>
                             <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-amber via-magenta to-violet font-display text-sm font-bold text-white">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-br from-amber via-magenta to-violet font-display text-sm font-bold text-white">
                                     {review.name.charAt(0)}
                                 </div>
                                 <div>
@@ -79,6 +86,20 @@ const Reviews = () => {
                             </div>
                         </article>
                     ))}
+
+                </div>
+                <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                    <div className="flex -space-x-3">
+                        <div className="h-10 w-10 rounded-full bg-linear-to-br from-amber via-magenta to-violet" />
+                        <div className="h-10 w-10 rounded-full bg-linear-to-br from-amber via-magenta to-violet" />
+                        <div className="h-10 w-10 rounded-full bg-linear-to-br from-amber via-magenta to-violet" />
+                        <div className="h-10 w-10 rounded-full bg-linear-to-br from-amber via-magenta to-violet" />
+                    </div>
+
+                    <p className="text-lg text-white">
+                        <span className="font-bold text-amber">500+</span>
+                        {" "}tevreden klanten • clients satisfaits • happy customers
+                    </p>
                 </div>
             </div>
         </section>

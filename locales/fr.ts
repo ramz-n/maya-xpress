@@ -35,29 +35,20 @@ export const fr = {
 
   services: {
     badge: "Nos Services",
-    title: "Tout ce dont vous avez besoin en un seul endroit",
-    description:
-      "Maya X-press est un point de service agréé pour les partenaires que vous connaissez déjà et auxquels vous faites confiance.",
+    title: "Tout ce dont vous avez besoin sous un même toit",
+    description: "Maya X-press offre des services fiables à la communauté d’Anvers.",
 
-    lotteryTitle: "Billets de Loterie",
-    lotteryDesc:
-      "Vente de billets de loterie nationaux et locaux à Anvers",
+    lotteryTitle: "Billets de loto",
+    lotteryDesc: "Point de vente officiel de la Loterie Nationale.",
 
-    postTitle: "Services Postaux",
-    postDesc:
-      "Point de service officiel BPOST et DHL pour les lettres et colis",
+    dhlTitle: "DHL Express",
+    dhlDesc: "Point officiel DHL pour le dépôt et le retrait de colis.",
 
-    moneyTitle: "Transferts d'Argent",
-    moneyDesc:
-      "Transferts internationaux RIA rapides et sécurisés à Anvers",
-  },
+    bpostTitle: "Services Bpost",
+    bpostDesc: "Envoyez et recevez lettres et colis via Bpost.",
 
-  features: {
-    title: "Pourquoi les gens choisissent notre magasin",
-
-    fast: "Service Rapide",
-    secure: "Service Sécurisé",
-    satisfaction: "Satisfaction Client",
+    moneyTitle: "Transfert d'Argent RIA",
+    moneyDesc: "Transferts d'argent internationaux rapides et sécurisés.",
   },
 
   reviews: {
@@ -68,15 +59,14 @@ export const fr = {
 
     review1:
       "Magasin de quartier fantastique ! Toujours accueillant et serviable. Le meilleur magasin de loterie d'Anvers.",
+    review1Location: "Centre d'Anvers",
 
     review2:
       "Service BPOST rapide et très fiable pour les transferts d'argent. Je recommande !",
+    review2Location: "Borgerhout",
 
     review3:
       "Excellent endroit pour envoyer des colis DHL. Service irréprochable !",
-
-    review1Location: "Centre d'Anvers",
-    review2Location: "Borgerhout",
     review3Location: "Berchem",
   },
 
@@ -101,6 +91,7 @@ export const fr = {
 
     quickLinks: "Liens Rapides",
     location: "Localisation",
+    services: "Services",
 
     copyright:
       "© 2026 Maya X-press. Tous droits réservés.",

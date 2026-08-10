@@ -3,10 +3,9 @@ import { nl } from "./nl";
 import { fr } from "./fr";
 
 export const translations = {
-  en,
-  nl,
-  fr,
-};
+    en,
+    nl,
+    fr,
+} as const;
 
-export type Language =
-  keyof typeof translations;
+export type Language = keyof typeof translations;
