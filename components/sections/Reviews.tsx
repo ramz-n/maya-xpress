@@ -1,10 +1,33 @@
-import { reviews } from '@/constants'
+import { useLanguage } from "@/context/LanguageContext";
 import { useGSAP } from '@gsap/react'
 import { Star } from 'lucide-react'
 import { useRef } from 'react'
 import gsap from 'gsap'
 
 const Reviews = () => {
+
+    const { t } = useLanguage();
+
+    const reviews = [
+        {
+            quote: t.reviews.review1,
+            name: "Marie V.",
+            location: t.reviews.review1Location,
+            rating: 5,
+        },
+        {
+            quote: t.reviews.review2,
+            name: "Peter D.",
+            location: t.reviews.review2Location,
+            rating: 4,
+        },
+        {
+            quote: t.reviews.review3,
+            name: "Sophie M.",
+            location: t.reviews.review3Location,
+            rating: 5,
+        },
+    ];
 
     const reviewsRef = useRef(null)
 
@@ -23,9 +46,9 @@ const Reviews = () => {
     return (
         <section ref={reviewsRef} id="reviews" className="relative bg-purple-dark py-28 sm:py-36">
             <div className="relative mx-auto max-w-4xl px-6 text-center sm:px-8">
-                <p className="reviews-title text-amber">Customer reviews</p>
-                <h2 className="reviews-heading mt-4 font-display text-4xl font-bold text-cloud sm:text-5xl">What our customers say </h2>
-                <p className="reviews-sub mt-5 text-base text-mist/70 sm:text-lg">A few words from the people who stop by every week.</p>
+                <p className="reviews-title text-amber">{t.reviews.badge}</p>
+                <h2 className="reviews-heading mt-4 font-display text-4xl font-bold text-cloud sm:text-5xl">{t.reviews.title}</h2>
+                <p className="reviews-sub mt-5 text-base text-mist/70 sm:text-lg">{t.reviews.subtitle}</p>
             </div>
 
             <div className="relative mt-16">

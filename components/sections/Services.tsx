@@ -1,11 +1,56 @@
-import { services, whyChooseUs } from '@/constants'
+import {
+    TicketIcon,
+    PackageCheckIcon,
+    BanknoteArrowUpIcon,
+} from "lucide-react";
+
+import {
+    serviceIcons,
+    featureIcons,
+} from "@/constants";
+
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from "@/context/LanguageContext";
 
 const Services = () => {
 
+    const { t } = useLanguage();
+
+    const serviceItems = [
+        {
+            title: t.services.lotteryTitle,
+            desc: t.services.lotteryDesc,
+            icon: serviceIcons[0],
+        },
+        {
+            title: t.services.postTitle,
+            desc: t.services.postDesc,
+            icon: serviceIcons[1],
+        },
+        {
+            title: t.services.moneyTitle,
+            desc: t.services.moneyDesc,
+            icon: serviceIcons[2],
+        },
+    ];
+
+    const featureItems = [
+        {
+            title: t.features.fast,
+            icon: featureIcons[0],
+        },
+        {
+            title: t.features.secure,
+            icon: featureIcons[1],
+        },
+        {
+            title: t.features.satisfaction,
+            icon: featureIcons[2],
+        },
+    ];
     const servicesRef = useRef<HTMLElement>(null);
 
     useGSAP(() => {
@@ -47,18 +92,18 @@ const Services = () => {
     return (
         <section ref={servicesRef} id="services" className="relative">
             <div className="mx-auto max-w-4xl px-6 pt-28 text-center sm:px-8 sm:pt-36">
-                <p className="service-title text-amber">What we offer</p>
+                <p className="service-title text-amber">{t.services.badge}</p>
                 <h2 className="service-heading mt-4 font-display text-4xl font-bold leading-tight text-gradient sm:text-5xl">
-                    Everything you need in one location
+                    {t.services.title}
                 </h2>
-                <p className="service-sub mt-5 text-base text-ink/75 sm:text-lg">Maya Express is an authorised service point for the partners you already know and trust.</p>
+                <p className="service-sub mt-5 text-base text-ink/75 sm:text-lg">{t.services.description}</p>
             </div>
 
             <div className="relative overflow-hidden lg:h-[90vh] lg:py-0">
                 <div className="flex h-full items-center">
                     <div className="service-cards flex w-max flex-col gap-6 px-6 sm:px-8 lg:flex-row lg:gap-8 lg:px-[8vw]"
                     >
-                        {services.map((service, idx) => {
+                        {serviceItems.map((service, idx) => {
 
                             const Icon = service.icon;
 
@@ -90,15 +135,23 @@ const Services = () => {
 
             <div className="mx-auto bg-purple-da grid grid-cols-1 gap-6 px-6 pb-28 pt-10 sm:grid-cols-3 sm:px-8 sm:pb-36">
                 <p className="col-span-full mb-2 text-center font-display text-sm font-semibold uppercase tracking-[0.2em] text-navy/75">
-                    Why people choose our store
+                    {t.features.title}
                 </p>
-                {whyChooseUs.map((l, idx) => {
+                {featureItems.map((l, idx) => {
 
                     const Icon = l.icon
 
                     return <div key={idx} className="flex shadow-glow shadow-purple-dark items-center gap-4 rounded-2xl border border-navy px-6 py-5">
                         <Icon className='icon-gradient' color="#d90269" size={30} />
-                        <span className="font-display text-base font-semibold text-navy">{l.title}</span>
+                        <span className="font-display text-base font-semibold text-navy">
+                            {
+                                idx === 0
+                                    ? t.features.fast
+                                    : idx === 1
+                                        ? t.features.secure
+                                        : t.features.satisfaction
+                            }
+                        </span>
                     </div>
                 })}
             </div>

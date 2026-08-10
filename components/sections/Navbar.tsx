@@ -5,24 +5,63 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { MenuIcon, PackageIcon, X } from "lucide-react";
 import { navLinks } from "@/constants";
+import { useLanguage } from "@/context/LanguageContext";
 
-const langOptions = ["English", "Deutsch", "French"]
+import type { Language } from "@/translations";
+
+const langOptions = [
+    {
+        label: "English",
+        value: "en",
+    },
+    {
+        label: "Nederlands",
+        value: "nl",
+    },
+    {
+        label: "Français",
+        value: "fr",
+    },
+];
+
 
 export function Navbar() {
+    const {
+        language,
+        setLanguage,
+        t,
+        mounted,
+    } = useLanguage();
+
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [langOpen, setLangOpen] = useState(false);
-    const [lang, setLang] = useState("English");
 
     const router = useRouter();
 
+    if (!mounted) {
+        return null;
+    }
+
     const handleNav = (linkId: string) => {
         setMenuOpen(false);
-        router.push(`/${linkId}`);
+
+        const element = document.querySelector(linkId);
+
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
     };
 
-    const handleLangSelect = (selectedLng: string) => {
-        setLang(selectedLng);
+    const navMap = {
+        "#home": t.nav.home,
+        "#about": t.nav.about,
+        "#services": t.nav.services,
+        "#reviews": t.nav.reviews,
+        "#contact": t.nav.contact,
     };
 
     return (
@@ -45,7 +84,8 @@ export function Navbar() {
                             onClick={() => handleNav(link.id)}
                             className="cursor-pointer px-3.5 py-2 text-sm font-medium text-ink hover:text-violet transition-colors relative group"
                         >
-                            {link.key}
+                            {navMap[link.id as keyof typeof navMap]}
+
                             <span className="absolute left-3.5 right-3.5 -bottom-0.5 h-px scale-x-0 bg-linear-to-r from-amber via-magenta to-violet transition-transform duration-300 group-hover:scale-x-100" />
                         </button>
                     ))}
@@ -64,12 +104,15 @@ export function Navbar() {
                     <div className="relative hidden lg:block">
                         <button
                             onClick={() => setLangOpen((v) => !v)}
-                            onBlur={() => setTimeout(() => setLangOpen(false), 120)}
                             className="flex items-center gap-1.5 rounded-full border border-navy bg-ink px-3.5 py-1.5 text-xs font-semibold tracking-wide text-mist hover:border-magenta/60 transition-colors"
                             aria-haspopup="listbox"
                             aria-expanded={langOpen}
                         >
-                            {lang}
+                            {
+                                langOptions.find(
+                                    x => x.value === language
+                                )?.label
+                            }
                             <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className={`transition-transform ${langOpen ? "rotate-180" : ""}`}>
                                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -80,13 +123,20 @@ export function Navbar() {
                                 className="absolute right-0 mt-2 w-36 overflow-hidden rounded-xl border border-white/10 bg-navy/95 backdrop-blur-md shadow-glow"
                             >
                                 {langOptions.map((lng) => (
-                                    <li key={lng}>
+                                    <li key={lng.value}>
                                         <button
-                                            onClick={() => handleLangSelect(lng)}
-                                            className={`flex w-full items-center justify-between px-4 py-2.5 text-sm hover:bg-white/10 transition-colors ${lang === lng ? "text-amber" : "text-mist"
-                                                }`}
+                                            onClick={() => {
+                                                setLanguage(
+                                                    lng.value as "en" | "nl" | "fr"
+                                                );
+
+                                                setLangOpen(false);
+                                            }}
+                                            className={`flex w-full items-center justify-between px-4 py-2.5 text-sm hover:bg-white/10 transition-colors ${language === lng.value
+                                                ? "text-amber"
+                                                : "text-mist"}`}
                                         >
-                                            {lng}
+                                            {lng.label}
                                         </button>
                                     </li>
                                 ))}
@@ -116,7 +166,7 @@ export function Navbar() {
                             onClick={() => handleNav(link.id)}
                             className="py-3 text-left font-display text-lg font-semibold text-mist border-b border-white/5 cursor-pointer"
                         >
-                            {link.key}
+                            {navMap[link.id as keyof typeof navMap]}
                         </button>
                     ))}
                     {/*  <Link
@@ -131,12 +181,15 @@ export function Navbar() {
                     <div data-mobile-link className="flex gap-2 pt-4">
                         {langOptions.map((lng) => (
                             <button
-                                key={lng}
-                                onClick={() => setLang(lng)}
-                                className={`rounded-full border px-4 py-1.5 text-xs font-semibold ${lang === lng ? "border-amber text-amber" : "border-white/15 text-mist/70"
-                                    }`}
+                                key={lng.value}
+                                onClick={() =>
+                                    setLanguage(lng.value as Language)
+                                }
+                                className={`rounded-full border px-4 py-1.5 text-xs font-semibold ${language === lng.value
+                                    ? "border-amber text-amber"
+                                    : "border-white/15 text-mist/70"}`}
                             >
-                                {lng}
+                                {lng.label}
                             </button>
                         ))}
                     </div>

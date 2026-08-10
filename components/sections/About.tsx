@@ -1,12 +1,38 @@
-import { aboutFeatures } from "@/constants"
+import {
+    AwardIcon,
+    HandHeartIcon,
+    MapPinHouseIcon,
+    QuoteIcon
+} from "lucide-react";
+
+import { aboutIcons } from "@/constants";
 import { useGSAP } from "@gsap/react";
-import { QuoteIcon } from "lucide-react"
 import { useRef } from "react";
 import gsap from "gsap";
+import { useLanguage } from "@/context/LanguageContext";
 
 const About = () => {
 
+    const { t } = useLanguage();
     const aboutRef = useRef<HTMLElement>(null);
+
+    const features = [
+        {
+            title: t.about.expertiseTitle,
+            desc: t.about.expertiseDesc,
+            icon: aboutIcons[0],
+        },
+        {
+            title: t.about.friendlyTitle,
+            desc: t.about.friendlyDesc,
+            icon: aboutIcons[1],
+        },
+        {
+            title: t.about.locationTitle,
+            desc: t.about.locationDesc,
+            icon: aboutIcons[2],
+        },
+    ];
 
     useGSAP(() => {
         gsap.from(".about-title, .about-subtitle, .about-quote, .about-img", {
@@ -36,15 +62,15 @@ const About = () => {
 
             <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
                 <div className="lg:sticky lg:top-32 lg:self-start">
-                    <p className="about-title text-amber">About Us</p>
+                    <p className="about-title text-amber">{t.about.badge}</p>
                     <h2 className="about-subtitle mt-4 font-display text-4xl font-bold leading-[1.1] text-cloud sm:text-5xl">
-                        Your trusted neighborhood store in Antwerp
+                        {t.about.title}
                     </h2>
 
                     <div className="about-quote mt-10 rounded-3xl border border-violet/20 bg-linear-to-br from-navy-light p-7 shadow-glow">
                         <QuoteIcon className="rotate-180 icon-gradient" />
                         <p className="font-display text-lg leading-snug text-cloud sm:text-xl">
-                            Maya X-press is a reliable local store in Antwerp serving customers daily with fast and friendly service. We are proud to support the neighborhood with essential services in one central location.
+                            {t.about.description}
                         </p>
                     </div>
                 </div>
@@ -55,7 +81,7 @@ const About = () => {
                     </div>
 
                     <div className="about-features mt-12 grid grid-cols-1 gap-5 sm:grid-cols-3">
-                        {aboutFeatures.map((feature, idx) => {
+                        {features.map((feature, idx) => {
                             const Icon = feature.icon
 
                             return <div
