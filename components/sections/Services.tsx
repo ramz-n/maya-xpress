@@ -125,7 +125,7 @@ const Services = () => {
             </div>
 
             <div className="mx-auto overflow-hidden w-full px-6">
-                <div className="services-deliveries grid my-10 md:mt-0 md:pb-10 md:grid-cols-4 gap-10">
+                <div className="services-deliveries grid my-10 md:mt-0 md:pb-10 grid-cols-4 gap-10">
                     <img src={"/bpost1.png"} alt="bpost" className="h-full w-full object-contain rounded-2xl shadow-2xl shadow-violet shadow" />
                     <img src={"/dhl.png"} alt="dhl" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-violet shadow" />
                     <img src={"/rialogo.png"} alt="bpost" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-violet shadow" />
