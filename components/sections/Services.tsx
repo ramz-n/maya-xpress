@@ -100,8 +100,8 @@ const Services = () => {
             </div>
 
             <div className="relative overflow-hidden lg:h-[90vh] lg:py-0">
-                <div className="flex h-full items-center">
-                    <div className="service-cards flex w-max flex-col gap-6 px-6 sm:px-8 lg:flex-row lg:gap-8 lg:px-[8vw]"
+                <div className="flex my-5 h-full items-center">
+                    <div className="service-cards py-12 flex w-max flex-col gap-6 px-6 sm:px-8 lg:flex-row lg:gap-8 lg:px-[8vw]"
                     >
                         {serviceItems.map((service, idx) => {
 
