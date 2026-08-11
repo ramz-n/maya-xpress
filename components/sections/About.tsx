@@ -55,7 +55,14 @@ const About = () => {
     }, { scope: aboutRef, dependencies: [] });
 
     return (
-        <section ref={aboutRef} id="about" className="relative bg-purple-dark py-28 sm:py-36">
+        <section
+            ref={aboutRef}
+            id="about"
+            className="relative bg-purple-dark -mt-40 pt-30 pb-70"
+            style={{
+                clipPath: "polygon(0 6%, 100% 0, 100% 100%, 0 100%)",
+            }}
+        >
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 <div className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-purple-dark/30 blur-[130px]" />
             </div>
@@ -77,7 +84,7 @@ const About = () => {
 
                 <div>
                     <div className="about-img h-100">
-                        <img src={"/mx_store.jpg"} alt="maya express store" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-ink shadow" />
+                        <img src={"/shop-picture.png"} alt="maya express store" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-ink shadow" />
                     </div>
 
                     <div className="about-features mt-12 grid grid-cols-1 gap-5 sm:grid-cols-3">

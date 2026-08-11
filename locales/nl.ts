@@ -1,3 +1,5 @@
+import Services from "@/components/sections/Services";
+
 export const nl = {
   nav: {
     home: "Home",
@@ -34,30 +36,21 @@ export const nl = {
   },
 
   services: {
-    badge: "Wat Wij Aanbieden",
-    title: "Alles wat u nodig heeft op één locatie",
-    description:
-      "Maya X-press is een erkend servicepunt van partners die u al kent en vertrouwt.",
+    badge: "Onze Diensten",
+    title: "Alles wat u nodig heeft onder één dak",
+    description: "Maya X-press biedt betrouwbare lokale diensten voor Antwerpen.",
 
-    lotteryTitle: "Loterijtickets",
-    lotteryDesc:
-      "Verkoop van nationale en lokale loterijtickets in Antwerpen",
+    lotteryTitle: "Lotto Tickets",
+    lotteryDesc: "Officieel verkooppunt van de Nationale Loterij.",
 
-    postTitle: "Postdiensten",
-    postDesc:
-      "Officieel BPOST- en DHL-servicepunt voor brieven en pakketten",
+    dhlTitle: "DHL Express",
+    dhlDesc: "Officieel DHL afhaal- en verzendpunt in Antwerpen.",
 
-    moneyTitle: "Geldtransfers",
-    moneyDesc:
-      "Snelle en veilige internationale RIA-geldtransfers in Antwerpen",
-  },
+    bpostTitle: "Bpost Diensten",
+    bpostDesc: "Verzend en ontvang brieven en pakketten via Bpost.",
 
-  features: {
-    title: "Waarom mensen voor onze winkel kiezen",
-
-    fast: "Snelle Service",
-    secure: "Veilige Service",
-    satisfaction: "Klanttevredenheid",
+    moneyTitle: "RIA Geldtransfer",
+    moneyDesc: "Snelle en veilige internationale geldtransfers.",
   },
 
   reviews: {
@@ -68,15 +61,14 @@ export const nl = {
 
     review1:
       "Fantastische buurtwinkel! Altijd vriendelijk en behulpzaam. De beste loterijwinkel van Antwerpen.",
+    review1Location: "Centrum Antwerpen",
 
     review2:
       "Snelle BPOST-service en zeer betrouwbaar voor geldtransfers. Aanrader!",
+    review2Location: "Borgerhout",
 
     review3:
       "Ideale plek om DHL-pakketten te verzenden. Uitstekende service!",
-  
-    review1Location: "Centrum Antwerpen",
-    review2Location: "Borgerhout",
     review3Location: "Berchem",
   },
 
@@ -101,6 +93,7 @@ export const nl = {
 
     quickLinks: "Snelle Links",
     location: "Locatie",
+    services: "Diensten",
 
     copyright: "© 2026 Maya X-press. Alle rechten voorbehouden.",
     city: "Antwerpen, België",

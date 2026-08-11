@@ -1,13 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { MenuIcon, PackageIcon, X } from "lucide-react";
+import { MenuIcon, X } from "lucide-react";
 import { navLinks } from "@/constants";
 import { useLanguage } from "@/context/LanguageContext";
-
-import type { Language } from "@/translations";
+import Image from "next/image";
+import type { Language } from "@/locales";
 
 const langOptions = [
     {
@@ -30,18 +29,25 @@ export function Navbar() {
         language,
         setLanguage,
         t,
-        mounted,
     } = useLanguage();
 
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [langOpen, setLangOpen] = useState(false);
 
-    const router = useRouter();
+    const [scrolled, setScrolled] = useState(false);
 
-    if (!mounted) {
-        return null;
-    }
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     const handleNav = (linkId: string) => {
         setMenuOpen(false);
@@ -64,16 +70,22 @@ export function Navbar() {
         "#contact": t.nav.contact,
     };
 
+
+
     return (
         <header
             className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 bg-cloud/90 backdrop-blur-sm`}
         >
             <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8">
                 <Link href="/" className="flex items-center gap-3 group" aria-label="Maya X-press home">
-                    <img
+                    <Image
                         src="/logo.png"
                         alt="Maya X-press logo"
-                        className="h-12 w-20 drop-shadow-[0_0_18px_rgba(217,2,105,0.45)]"
+                        width={80}
+                        height={42}
+                        priority
+                        className={`w-20 object-contain drop-shadow-[0_0_18px_rgba(217,2,105,0.45)] transition-all duration-300 ${scrolled ? "h-14 w-22" : "h-18 w-30"
+                            }`}
                     />
                 </Link>
 

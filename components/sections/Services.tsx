@@ -1,19 +1,7 @@
-import {
-    TicketIcon,
-    PackageCheckIcon,
-    BanknoteArrowUpIcon,
-} from "lucide-react";
+"use client";
 
-import {
-    serviceIcons,
-    featureIcons,
-} from "@/constants";
-
-import { useGSAP } from '@gsap/react';
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLanguage } from "@/context/LanguageContext";
+import Image from "next/image";
 
 const Services = () => {
 
@@ -23,71 +11,25 @@ const Services = () => {
         {
             title: t.services.lotteryTitle,
             desc: t.services.lotteryDesc,
-            icon: serviceIcons[0],
+            image: "/lotto-circle.png",
         },
         {
-            title: t.services.postTitle,
-            desc: t.services.postDesc,
-            icon: serviceIcons[1],
+            title: t.services.dhlTitle,
+            desc: t.services.dhlDesc,
+            image: "/dhl-circle.png",
+        },
+        {
+            title: t.services.bpostTitle,
+            desc: t.services.bpostDesc,
+            image: "/bpost-circle.png",
         },
         {
             title: t.services.moneyTitle,
             desc: t.services.moneyDesc,
-            icon: serviceIcons[2],
+            image: "/ria-circle.png",
         },
     ];
 
-    const featureItems = [
-        {
-            title: t.features.fast,
-            icon: featureIcons[0],
-        },
-        {
-            title: t.features.secure,
-            icon: featureIcons[1],
-        },
-        {
-            title: t.features.satisfaction,
-            icon: featureIcons[2],
-        },
-    ];
-    const servicesRef = useRef<HTMLElement>(null);
-
-    useGSAP(() => {
-        gsap.from(".service-title, .service-heading, .service-sub", {
-            scrollTrigger: { trigger: servicesRef.current, start: "top 70%" },
-            y: 30,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.1,
-            ease: "power3.out",
-        });
-
-        gsap.utils.toArray<HTMLElement>(".service-cards").forEach((card, i) => {
-            gsap.from(card, {
-                x: i % 2 === 0 ? -80 : 80,
-                y: 80,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 70%",
-                    toggleActions: "play none none reverse",
-                },
-            });
-        });
-
-        const deliveries = document.querySelector(".services-deliveries");
-        if (deliveries) {
-            gsap.from(deliveries, { x: 500, duration: 10, ease: "none", repeat: -1, yoyo: true });
-            const w = deliveries.scrollWidth / 2;
-            gsap.to(deliveries, { x: -w, duration: 10, ease: "none", repeat: -1, yoyo: true });
-        }
-
-        ScrollTrigger.refresh();
-
-    }, { scope: servicesRef });
 
     return (
         <section ref={servicesRef} id="services" className="relative">
@@ -122,7 +64,6 @@ const Services = () => {
                         })}
                     </div>
                 </div>
-            </div>
 
             <div className="mx-auto overflow-hidden w-full px-6">
                 <div className="services-deliveries grid my-10 md:mt-0 md:pb-10 grid-cols-4 gap-10">
@@ -131,29 +72,6 @@ const Services = () => {
                     <img src={"/rialogo.png"} alt="bpost" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-violet shadow" />
                     <img src={"/lottery.png"} alt="bpost" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-violet shadow" />
                 </div>
-            </div>
-
-            <div className="mx-auto bg-purple-da grid grid-cols-1 gap-6 px-6 pb-28 pt-10 sm:grid-cols-3 sm:px-8 sm:pb-36">
-                <p className="col-span-full mb-2 text-center font-display text-sm font-semibold uppercase tracking-[0.2em] text-navy/75">
-                    {t.features.title}
-                </p>
-                {featureItems.map((l, idx) => {
-
-                    const Icon = l.icon
-
-                    return <div key={idx} className="flex shadow-glow shadow-purple-dark items-center gap-4 rounded-2xl border border-navy px-6 py-5">
-                        <Icon className='icon-gradient' color="#d90269" size={30} />
-                        <span className="font-display text-base font-semibold text-navy">
-                            {
-                                idx === 0
-                                    ? t.features.fast
-                                    : idx === 1
-                                        ? t.features.secure
-                                        : t.features.satisfaction
-                            }
-                        </span>
-                    </div>
-                })}
             </div>
         </section>
     )

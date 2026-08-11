@@ -10,13 +10,13 @@ import {
 import {
     translations,
     Language,
-} from "@/translations";
+} from "@/locales";
+
 
 type LanguageContextType = {
     language: Language;
     setLanguage: (lang: Language) => void;
     t: typeof translations.en;
-    mounted: boolean;
 };
 
 const LanguageContext =
@@ -30,40 +30,21 @@ export function LanguageProvider({
     children: React.ReactNode;
 }) {
 
-    const [language, setLanguage] =
-        useState<Language>("en");
+    const [language, setLanguage] = useState<Language>(() => {
+        if (typeof window === "undefined") return "en";
 
-    const [mounted, setMounted] =
-        useState(false);
+        const saved = localStorage.getItem("language");
 
-    useEffect(() => {
-
-        const savedLanguage =
-            localStorage.getItem(
-                "language"
-            ) as Language;
-
-        if (
-            savedLanguage &&
-            ["en", "nl", "fr"].includes(savedLanguage)
-        ) {
-            setLanguage(savedLanguage);
-        }
-
-        setMounted(true);
-
-    }, []);
+        return saved === "en" ||
+            saved === "nl" ||
+            saved === "fr"
+            ? saved
+            : "en";
+    });
 
     useEffect(() => {
-
-        if (mounted) {
-            localStorage.setItem(
-                "language",
-                language
-            );
-        }
-
-    }, [language, mounted]);
+        localStorage.setItem("language", language);
+    }, [language]);
 
     return (
         <LanguageContext.Provider
@@ -71,7 +52,6 @@ export function LanguageProvider({
                 language,
                 setLanguage,
                 t: translations[language],
-                mounted,
             }}
         >
             {children}

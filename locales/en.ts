@@ -34,50 +34,36 @@ export const en = {
   },
 
   services: {
-    badge: "What we offer",
-    title: "Everything you need in one location",
-    description:
-      "Maya X-press is an authorised service point for the partners you already know and trust.",
+    badge: "Our Services",
+    title: "Everything You Need Under One Roof",
+    description: "Maya X-press offers trusted local services for the Antwerp community.",
 
-    lotteryTitle: "Lottery Tickets",
-    lotteryDesc:
-      "Sales of national and local lottery tickets in Antwerp",
+    lotteryTitle: "Lotto Tickets",
+    lotteryDesc: "Official National Lottery sales point.",
 
-    postTitle: "Post Services",
-    postDesc:
-      "Official BPOST and DHL service point for letters and parcels",
+    dhlTitle: "DHL Express",
+    dhlDesc: "Official DHL parcel drop-off and collection point in Antwerp.",
 
-    moneyTitle: "Money Transfers",
-    moneyDesc:
-      "Fast and secure international RIA money transfers in Antwerp",
+    bpostTitle: "Bpost Services",
+    bpostDesc: "Send and receive letters and parcels through Bpost.",
+
+    moneyTitle: "RIA Money Transfer",
+    moneyDesc: "Fast and secure international money transfers.",
   },
-
-  features: {
-    title: "Why people choose our store",
-
-    fast: "Fast Service",
-    secure: "Secure Service",
-    satisfaction: "Customer Satisfaction",
-  },
-
+  
   reviews: {
     badge: "Customer Reviews",
-    title: "What our customers say",
-    subtitle:
-      "A few words from the people who stop by every week.",
+    title: "What Our Customers Say",
+    subtitle: "A few words from the people who visit us every week.",
 
-    review1:
-      "Fantastic neighborhood store! Always friendly and helpful. The best lottery shop in Antwerp",
+    review1: "Fantastic neighborhood store! Always friendly and helpful.",
+    review1Location: "Antwerp Center",
 
-    review2:
-      "Fast BPOST service and very reliable for money transfers. Recommended!",
+    review2: "Fast Bpost service and very reliable for money transfers.",
+    review2Location: "Borgerhout",
 
-    review3:
-      "Cool place to send DHL parcels. Excellent service!",
-    
-      review1Location: "Antwerp Center",
-      review2Location: "Borgerhout",
-      review3Location: "Berchem",
+    review3: "Excellent DHL service and very welcoming staff.",
+    review3Location: "Berchem",
   },
 
   contact: {
@@ -101,6 +87,7 @@ export const en = {
 
     quickLinks: "Quick Links",
     location: "Location",
+    services: "Services",
 
     copyright: "© 2026 Maya X-press. All rights reserved.",
     city: "Antwerp, Belgium",
