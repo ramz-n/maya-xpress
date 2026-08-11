@@ -19,16 +19,16 @@ const Contact = () => {
                 <p className="mt-5 text-base text-navy/75 sm:text-lg">{t.contact.subtitle}</p>
             </div>
 
-            <div className="relative mx-auto mt-16 grid items-center max-w-6xl grid-cols-1 gap-8 px-6 sm:px-8 lg:grid-cols-2">
-                <div className="flex flex-col gap-6 shadow-glow">
-                    <div className="rounded-3xl border border-violet bg-navy p-5 md:p-8">
+            <div className="relative mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-8 px-6 sm:px-8 lg:grid-cols-2 lg:items-stretch">
+                <div className="h-full">
+                    <div className="rounded-3xl border border-violet bg-navy p-8">
                         <div className="flex items-start gap-4">
                             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-purple-600 to-magenta">
                                 <MapPinIcon className="h-5 w-5" color="#ffffff" />
                             </div>
                             <div className=" space-y-3">
                                 <p className="text-xs font-semibold uppercase tracking-wider text-mist/50">{t.contact.address}</p>
-                                <p className="mt-1 font-display text-sm font-semibold text-cloud">Frank Craeybeckxlaan 83, 2100 Antwerpen, Belgium
+                                <p className="mt-1 font-display text-lg font-semibold text-cloud">Frank Craeybeckxlaan 83, 2100 Antwerpen, Belgium
                                 </p>
                                 <a
                                     href="https://maps.app.goo.gl/8zbiksGdZL7YLd939"
@@ -47,17 +47,33 @@ const Contact = () => {
                                 <Clock className="h-5 w-5 text-white" />
                             </div>
 
-                                <p className="text-sm">
-                                    {t.contact.weekday}: <strong>9:00AM - 7:00PM</strong>
+                            <div className="flex-1 space-y-3">
+                                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-mist/50">
+                                    {t.contact.hours}
                                 </p>
 
-                                <p className="text-sm">
-                                    {t.contact.saturday}: <strong>9:00AM - 5:00PM</strong>
-                                </p>
+                                <div className="space-y-2 font-display text-mist/80">
+                                    <div className="flex justify-between gap-4">
+                                        <span>{t.contact.weekday}</span>
+                                        <span className="font-semibold text-cloud">
+                                            9:00 AM - 7:00 PM
+                                        </span>
+                                    </div>
 
-                                <p className="text-sm">
-                                    {t.contact.sunday}: <strong>{t.contact.closed}</strong>
-                                </p>
+                                    <div className="flex justify-between gap-4">
+                                        <span>{t.contact.saturday}</span>
+                                        <span className="font-semibold text-cloud">
+                                            9:00 AM - 5:00 PM
+                                        </span>
+                                    </div>
+
+                                    <div className="flex justify-between gap-4">
+                                        <span>{t.contact.sunday}</span>
+                                        <span className="font-semibold text-amber">
+                                            {t.contact.closed}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -71,7 +87,12 @@ const Contact = () => {
                                     {t.contact.phone}
                                 </p>
 
-                                <p className="text-sm">+32 469754412</p>
+                                <a
+                                    href="tel:+32469754412"
+                                    className="mt-2 inline-block font-display text-lg font-semibold text-cloud transition-colors hover:text-amber"
+                                >
+                                    +32 469 75 44 12
+                                </a>
                             </div>
                         </div>
                     </div>

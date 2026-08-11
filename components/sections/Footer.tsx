@@ -24,7 +24,7 @@ const Footer = () => {
 
     return (
         <footer className="relative border-t border-violet/20 bg-navy px-6 pb-8 pt-16 sm:px-8">
-            <div className="absolute left-0 top-0 h-px w-full bg-linear-to-r from-transparent via-magenta/50 to-transparent" />
+            <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-magenta/50 to-transparent" />
 
             <div className="absolute -top-20 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-magenta/10 blur-3xl" />
             <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
@@ -94,7 +94,7 @@ const Footer = () => {
                                 >
                                     <img
                                         src={logo}
-                                        alt="Service Logo"
+                                        alt=""
                                         className="h-11 w-11 object-contain"
                                     />
                                 </div>

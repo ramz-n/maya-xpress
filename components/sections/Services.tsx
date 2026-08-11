@@ -32,45 +32,96 @@ const Services = () => {
 
 
     return (
-        <section ref={servicesRef} id="services" className="relative">
-            <div className="mx-auto max-w-4xl px-6 pt-28 text-center sm:px-8 sm:pt-36">
-                <p className="service-title text-amber">{t.services.badge}</p>
-                <h2 className="service-heading mt-4 font-display text-4xl font-bold leading-tight text-gradient sm:text-5xl">
-                    {t.services.title}
-                </h2>
-                <p className="service-sub mt-5 text-base text-ink/75 sm:text-lg">{t.services.description}</p>
-            </div>
+        <section
+            id="services"
+            className="relative -mt-40 bg-white pt-20 pb-60"
+            style={{
+                clipPath: "polygon(0 0, 100% 6%, 100% 100%, 0 100%)",
+            }}
+        >
+            <div className="mx-auto max-w-7xl px-6 sm:px-8">
+                <div className="mx-auto max-w-3xl text-center">
+                    <p className="text-amber">
+                        {t.services.badge}
+                    </p>
 
-            <div className="relative overflow-hidden lg:h-[90vh] lg:py-0">
-                <div className="flex my-5 h-full items-center">
-                    <div className="service-cards py-12 flex w-max flex-col gap-6 px-6 sm:px-8 lg:flex-row lg:gap-8 lg:px-[8vw]"
-                    >
-                        {serviceItems.map((service, idx) => {
+                    <h2 className="mt-4 font-display text-4xl font-bold text-gradient sm:text-5xl">
+                        {t.services.title}
+                    </h2>
 
-                            const Icon = service.icon;
-
-                            return <article
-                                key={service.title}
-                                className="cursor-pointer shadow-glow shadow-purple-dark flex w-full flex-col justify-between overflow-hidden rounded-4xl border border-violet/50 bg-linear-to-br from-navy/95 to-navy/75 p-8 transition-colors hover:border-amber lg:w-[calc(100%/3)]"
-                            >
-                                <div className="flex flex-col items-center justify-center gap-3">
-                                    <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-ink/60">
-                                        <Icon color='#d90269' size={30} className='icon-gradient' />
-                                    </div>
-                                    <h3 className="mt-6 font-display text-2xl font-bold text-cloud">{service.title}</h3>
-                                    <p className="text-center mt-3 text-sm leading-relaxed text-mist/70 sm:text-base">{service.desc}</p>
-                                </div>
-                            </article>
-                        })}
-                    </div>
+                    <p className="mt-5 text-lg text-ink/70">
+                        {t.services.description}
+                    </p>
                 </div>
 
-            <div className="mx-auto overflow-hidden w-full px-6">
-                <div className="services-deliveries grid my-10 md:mt-0 md:pb-10 grid-cols-4 gap-10">
-                    <img src={"/bpost1.png"} alt="bpost" className="h-full w-full object-contain rounded-2xl shadow-2xl shadow-violet shadow" />
-                    <img src={"/dhl.png"} alt="dhl" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-violet shadow" />
-                    <img src={"/rialogo.png"} alt="bpost" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-violet shadow" />
-                    <img src={"/lottery.png"} alt="bpost" className="h-full w-full object-cover rounded-2xl shadow-2xl shadow-violet shadow" />
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 pt-10">
+                    {serviceItems.map((service) => (
+                        <article
+                            key={service.title}
+                            className="
+                                group
+                                relative
+                                overflow-hidden
+                                rounded-3xl
+                                border
+                                border-violet/10
+                                bg-white
+                                p-8
+                                shadow-lg
+                                transition-all
+                                duration-300
+                                hover:-translate-y-2
+                                hover:border-violet/30
+                                hover:shadow-2xl
+                            "
+                        >
+                            {/* Top Accent */}
+                            <div className="absolute left-0 top-0 h-1 w-full bg-linear-to-r from-[rgb(117,23,143)] via-[rgb(217,2,105)] to-[rgb(250,138,12)]" />
+
+                            {/* Logo */}
+                            <div
+                                className="
+                                    mx-auto
+                                    flex
+                                    h-24
+                                    w-24
+                                    items-center
+                                    justify-center
+                                    rounded-full
+                                    bg-linear-to-br
+                                    from-violet/50
+                                    to-magenta/50
+                                    transition-transform
+                                    duration-300
+                                    group-hover:scale-110
+                                "
+                            >
+                                <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    width={92}
+                                    height={92}
+                                    className="object-contain"
+                                />
+                            </div>
+
+                            {/* Content */}
+                            <div className="mt-6 text-center">
+                                <h3 className="font-display text-xl font-bold text-violet">
+                                    {service.title}
+                                </h3>
+
+                                <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                                    {service.desc}
+                                </p>
+                            </div>
+
+                            {/* Bottom Decoration */}
+                            <div className="mt-6 flex justify-center">
+                                <span className="h-1 w-12 rounded-full bg-linear-to-r from-[rgb(117,23,143)] to-[rgb(217,2,105)]" />
+                            </div>
+                        </article>
+                    ))}
                 </div>
             </div>
         </section>
