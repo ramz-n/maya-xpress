@@ -47,7 +47,7 @@ const Reviews = () => {
         <section
             ref={reviewsRef}
             id="reviews"
-            className="relative bg-purple-dark -mt-40 pt-30 pb-40"
+            className="relative bg-purple-dark -mt-20 pt-40 pb-70"
             style={{
                 clipPath: "polygon(0 6%, 100% 0, 100% 100%, 0 100%)",
             }}
@@ -60,7 +60,7 @@ const Reviews = () => {
 
             <div className="relative mt-16">
                 <div
-                    className="reviews-card grid grid-cols-1 md:grid-cols-3 gap-6 px-6 pb-6 sm:px-8 justify-center"
+                    className="reviews-card grid md:grid-cols-3 gap-6 px-6 pb-6 sm:px-8 justify-center"
                 >
                     {reviews.map((review) => (
                         <article
@@ -98,7 +98,7 @@ const Reviews = () => {
 
                     <p className="text-lg text-white">
                         <span className="font-bold text-amber">500+</span>
-                        {" "}tevreden klanten • clients satisfaits • happy customers
+                        {" "} {t.reviews.moreReviews}
                     </p>
                 </div>
             </div>

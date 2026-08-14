@@ -64,6 +64,8 @@ export const en = {
 
     review3: "Excellent DHL service and very welcoming staff.",
     review3Location: "Berchem",
+
+    moreReviews: "happy customers",
   },
 
   contact: {
@@ -71,8 +73,8 @@ export const en = {
     title: "Visit Maya X-press in Deurne, Antwerp",
     subtitle: "Contact us for more information.",
 
-    address: "Address",
-    hours: "Hours",
+    address: "Visiting Address",
+    hours: "Opening Hours",
     phone: "Phone",
 
     weekday: "Monday - Friday",

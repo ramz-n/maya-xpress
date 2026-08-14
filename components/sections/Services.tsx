@@ -34,7 +34,7 @@ const Services = () => {
     return (
         <section
             id="services"
-            className="relative -mt-40 bg-white pt-20 pb-60"
+            className="relative -mt-50 bg-white pt-40 pb-40"
             style={{
                 clipPath: "polygon(0 0, 100% 6%, 100% 100%, 0 100%)",
             }}

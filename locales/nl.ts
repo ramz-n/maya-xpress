@@ -70,6 +70,8 @@ export const nl = {
     review3:
       "Ideale plek om DHL-pakketten te verzenden. Uitstekende service!",
     review3Location: "Berchem",
+
+    moreReviews: "tevreden klanten",
   },
 
   contact: {
@@ -77,7 +79,7 @@ export const nl = {
     title: "Bezoek Maya X-press in Deurne, Antwerpen",
     subtitle: "Neem contact met ons op voor meer informatie.",
 
-    address: "Adres",
+    address: "Bezoekadres",
     hours: "Openingsuren",
     phone: "Telefoon",
 

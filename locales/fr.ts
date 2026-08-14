@@ -68,6 +68,8 @@ export const fr = {
     review3:
       "Excellent endroit pour envoyer des colis DHL. Service irréprochable !",
     review3Location: "Berchem",
+
+    moreReviews: "clients satisfaits",
   },
 
   contact: {
@@ -75,7 +77,7 @@ export const fr = {
     title: "Visitez Maya X-press à Deurne, Anvers",
     subtitle: "Contactez-nous pour plus d'informations.",
 
-    address: "Adresse",
+    address: "Adresse de Visite",
     hours: "Heures d'Ouverture",
     phone: "Téléphone",
 

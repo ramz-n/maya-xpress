@@ -23,7 +23,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="relative border-t border-violet/20 bg-navy px-6 pb-8 pt-16 sm:px-8">
+        <footer className="relative border-t border-violet/20 bg-navy px-6 pb-8 pt-20 sm:px-8">
             <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-magenta/50 to-transparent" />
 
             <div className="absolute -top-20 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-magenta/10 blur-3xl" />

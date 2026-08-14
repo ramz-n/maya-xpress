@@ -79,51 +79,44 @@ const Hero = () => {
         <section
             ref={sectionRef}
             id="home"
-            className="relative flex min-h-screen items-center overflow-hidden pt-52 pb-52"
+            className="relative flex min-h-screen items-center overflow-hidden pt-40 pb-60"
         >
             {/* Full Background */}
-            <div
-                className="absolute inset-0 bg-cover bg-no-repeat"
+            <div className="absolute inset-0 bg-cover bg-center md:bg-right "
                 style={{
                     backgroundImage: "url('/background1.png')",
-                    backgroundPosition: "center -50px",
                 }}
             />
 
-            <div
-                className="absolute inset-0 bg-linear-to-r
-                from-[#ffffffee]
-                via-[#f3f3f399]
-                to-transparent"
-            />
 
-            <div
-                className="absolute inset-y-0 left-0 w-2/3
-                bg-linear-to-r
-                from-[#75178f22]
-                via-[#d9026922]
-                to-transparent"
-            />
             {/* Content */}
             <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-8">
-                <div className="max-w-2xl">
-                    <h1 className="font-display leading-[1.05] font-bold text-4xl md:text-6xl">
+                <div className="md:bg-transparent
+                                bg-gradient-to-b
+                                from-[#d90269]/50
+                                via-[#75178f]/50
+                                to-[#4e1b9c]/40
+                                backdrop-blur-md
+                                rounded-2xl
+                                p-6
+                                max-w-md">
+                    <h1 className="font-display leading-[1.05] font-bold">
                         <span
                             ref={heading1Ref}
-                            className="block text-violet"
+                            className="block text-white text-4xl md:text-6xl"
                         >
                             {t.hero.title}
                         </span>
 
                         <span
                             ref={heading2Ref}
-                            className="block text-gradient"
+                            className="block text-yellow-400 text-3xl md:text-5xl py-5"
                         >
                             {t.hero.subtitle}
                         </span>
                     </h1>
 
-                    <p className="sub-heading mt-7 text-lg text-ink max-w-xl">
+                    <p className="sub-heading mt-7 text-lg text-white max-w-xl">
                         {t.hero.description}
                     </p>
 
