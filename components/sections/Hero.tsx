@@ -93,12 +93,12 @@ const Hero = () => {
             <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-8">
                 <div className="md:bg-transparent
                                 bg-gradient-to-b
-                                from-[#d90269]/50
-                                via-[#75178f]/50
+                                from-[#d90269]/40
+                                via-[#75178f]/40
                                 to-[#4e1b9c]/40
-                                backdrop-blur-md
+                                backdrop-blur-xs
                                 rounded-2xl
-                                p-6
+                                px-6 py-12
                                 max-w-md">
                     <h1 className="font-display leading-[1.05] font-bold">
                         <span
@@ -110,13 +110,13 @@ const Hero = () => {
 
                         <span
                             ref={heading2Ref}
-                            className="block text-yellow-400 text-3xl md:text-5xl py-5"
+                            className="block text-yellow-300 text-3xl md:text-5xl py-5"
                         >
                             {t.hero.subtitle}
                         </span>
                     </h1>
 
-                    <p className="sub-heading mt-7 text-lg text-white max-w-xl">
+                    <p className="sub-heading mt-7 text-lg text-slate-100 drop-shadow-md max-w-xl">
                         {t.hero.description}
                     </p>
 
