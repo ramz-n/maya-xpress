@@ -28,7 +28,7 @@ const Contact = () => {
                             </div>
                             <div className=" space-y-3">
                                 <p className="text-xs font-semibold uppercase tracking-wider text-mist/50">{t.contact.address}</p>
-                                <p className="mt-1 font-display text-lg font-semibold text-cloud">Frank Craeybeckxlaan 83, 2100 Antwerpen, Belgium
+                                <p className="mt-1 font-display text-lg font-semibold text-cloud">Frank Craeybeckxlaan 83, 2100 Deurne, Antwerpen, Belgium
                                 </p>
                                 <a
                                     href="https://maps.app.goo.gl/8zbiksGdZL7YLd939"
@@ -36,7 +36,7 @@ const Contact = () => {
                                     rel="noreferrer"
                                     className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-amber hover:underline"
                                 >
-                                    Frank Craeybeckxlaan 83, 2100 Antwerpen, Belgium
+                                    Frank Craeybeckxlaan 83, 2100 Deurne, Antwerpen, Belgium
                                     <MoveUpRightIcon className="h-5 w-5" />
                                 </a>
                             </div>

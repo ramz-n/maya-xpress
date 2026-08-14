@@ -13,38 +13,38 @@ export const nl = {
     title: "Snelheid waarop u kunt vertrouwen,",
     subtitle: "Service die u verdient.",
     description:
-      "Uw vertrouwde buurtwinkel in Antwerpen voor loterijtickets, postdiensten zoals BPOST & DHL, RIA-geldtransfers, cadeaubonnen, Hallmark-kaarten, snacks, dranken en nog veel meer.",
+      "Uw vertrouwde buurtwinkel in Deurne, Antwerpen voor loterijtickets, postdiensten zoals BPOST & DHL, RIA-geldtransfers, cadeaubonnen, Hallmark-kaarten, snacks, dranken en nog veel meer.",
     exploreBtn: "Ontdek Onze Diensten",
     visitBtn: "Bezoek Onze Winkel",
   },
 
   about: {
     badge: "Over Ons",
-    title: "Uw vertrouwde buurtwinkel in Antwerpen",
+    title: "Uw vertrouwde buurtwinkel in Deurne, Antwerpen",
     description:
-      "Maya X-press is een betrouwbare lokale winkel in Antwerpen die dagelijks klanten bedient met snelle en vriendelijke service. Wij zijn trots om de buurt te ondersteunen met essentiële diensten op één centrale locatie.",
+      "Maya X-press is een betrouwbare lokale winkel in Deurne, Antwerpen die dagelijks klanten bedient met snelle en vriendelijke service. Wij zijn trots om de buurt te ondersteunen met essentiële diensten op één centrale locatie.",
 
     expertiseTitle: "Lokale Expertise",
     expertiseDesc:
-      "Jarenlange ervaring als buurtwinkel in Antwerpen",
+      "Jarenlange ervaring als buurtwinkel in Deurne, Antwerpen",
 
     friendlyTitle: "Vriendelijke Service",
     friendlyDesc: "Persoonlijke aandacht voor elke klant",
 
     locationTitle: "Centrale Ligging",
-    locationDesc: "Gemakkelijk bereikbaar in het hart van Antwerpen",
+    locationDesc: "Gemakkelijk bereikbaar in het hart van Deurne, Antwerpen",
   },
 
   services: {
     badge: "Onze Diensten",
     title: "Alles wat u nodig heeft onder één dak",
-    description: "Maya X-press biedt betrouwbare lokale diensten voor Antwerpen.",
+    description: "Maya X-press biedt betrouwbare lokale diensten voor Deurne, Antwerpen.",
 
     lotteryTitle: "Lotto Tickets",
     lotteryDesc: "Officieel verkooppunt van de Nationale Loterij.",
 
     dhlTitle: "DHL Express",
-    dhlDesc: "Officieel DHL afhaal- en verzendpunt in Antwerpen.",
+    dhlDesc: "Officieel DHL afhaal- en verzendpunt in Deurne, Antwerpen.",
 
     bpostTitle: "Bpost Diensten",
     bpostDesc: "Verzend en ontvang brieven en pakketten via Bpost.",
@@ -74,7 +74,7 @@ export const nl = {
 
   contact: {
     badge: "Contact",
-    title: "Bezoek Maya X-press in Antwerpen",
+    title: "Bezoek Maya X-press in Deurne, Antwerpen",
     subtitle: "Neem contact met ons op voor meer informatie.",
 
     address: "Adres",
@@ -89,14 +89,14 @@ export const nl = {
 
   footer: {
     description:
-      "Uw vertrouwde buurtwinkel in Antwerpen voor loterijtickets, postdiensten zoals BPOST & DHL, RIA-geldtransfers, cadeaubonnen, Hallmark-kaarten, snacks, dranken en nog veel meer.",
+      "Uw vertrouwde buurtwinkel in Deurne, Antwerpen voor loterijtickets, postdiensten zoals BPOST & DHL, RIA-geldtransfers, cadeaubonnen, Hallmark-kaarten, snacks, dranken en nog veel meer.",
 
     quickLinks: "Snelle Links",
     location: "Locatie",
     services: "Diensten",
 
     copyright: "© 2026 Maya X-press. Alle rechten voorbehouden.",
-    city: "Antwerpen, België",
+    city: "2100 Deurne, Antwerpen, België",
     designedBy: "Ontworpen & Ontwikkeld door",
   },
 };

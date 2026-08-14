@@ -67,7 +67,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-cloud/80">{t.footer.location}</p>
-                    <p className="mt-4 max-w-xs text-sm leading-7 text-mist/75">Frank Craeybeckxlaan 83, 2100 Antwerpen, BELGIUM</p>
+                    <p className="mt-4 max-w-xs text-sm leading-7 text-mist/75">Frank Craeybeckxlaan 83, 2100 Deurne, Antwerpen, BELGIUM</p>
                     <div className="mt-6">
                         <p className="text-xs font-bold uppercase tracking-[0.2em] text-cloud/80">
                             {t.footer.services}

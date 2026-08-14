@@ -11,38 +11,38 @@ export const en = {
     title: "Speed you can trust,",
     subtitle: "Service you deserve.",
     description:
-      "Your trusted local store in Antwerp for lottery tickets, post services like BPOST & DHL, RIA money transfers, gift cards, Hallmark cards, snacks & drinks and many more.",
+      "Your trusted local store in Deurne, Antwerp for lottery tickets, post services like BPOST & DHL, RIA money transfers, gift cards, Hallmark cards, snacks & drinks and many more.",
     exploreBtn: "Explore Our Services",
     visitBtn: "Visit Our Store",
   },
 
   about: {
     badge: "About Us",
-    title: "Your trusted neighborhood store in Antwerp",
+    title: "Your trusted neighborhood store in Deurne, Antwerp",
     description:
-      "Maya X-press is a reliable local store in Antwerp serving customers daily with fast and friendly service. We are proud to support the neighborhood with essential services in one central location.",
+      "Maya X-press is a reliable local store in Deurne, Antwerp serving customers daily with fast and friendly service. We are proud to support the neighborhood with essential services in one central location.",
 
     expertiseTitle: "Local Expertise",
     expertiseDesc:
-      "Years of experience as a neighborhood store in Antwerp",
+      "Years of experience as a neighborhood store in Deurne, Antwerp",
 
     friendlyTitle: "Friendly Service",
     friendlyDesc: "Personal attention for every customer",
 
     locationTitle: "Central Location",
-    locationDesc: "Easily accessible in the heart of Antwerp",
+    locationDesc: "Easily accessible in the heart of Deurne, Antwerp",
   },
 
   services: {
     badge: "Our Services",
     title: "Everything You Need Under One Roof",
-    description: "Maya X-press offers trusted local services for the Antwerp community.",
+    description: "Maya X-press offers trusted local services for the Deurne, Antwerp community.",
 
     lotteryTitle: "Lotto Tickets",
     lotteryDesc: "Official National Lottery sales point.",
 
     dhlTitle: "DHL Express",
-    dhlDesc: "Official DHL parcel drop-off and collection point in Antwerp.",
+    dhlDesc: "Official DHL parcel drop-off and collection point in Deurne, Antwerp.",
 
     bpostTitle: "Bpost Services",
     bpostDesc: "Send and receive letters and parcels through Bpost.",
@@ -68,7 +68,7 @@ export const en = {
 
   contact: {
     badge: "Contact Us",
-    title: "Visit Maya X-press in Antwerp",
+    title: "Visit Maya X-press in Deurne, Antwerp",
     subtitle: "Contact us for more information.",
 
     address: "Address",
@@ -83,14 +83,14 @@ export const en = {
 
   footer: {
     description:
-      "Your trusted neighborhood store in Antwerp for lottery tickets, post services like BPOST & DHL, RIA money transfers, gift cards, Hallmark cards, snacks & drinks and many more.",
+      "Your trusted neighborhood store in Deurne, Antwerp for lottery tickets, post services like BPOST & DHL, RIA money transfers, gift cards, Hallmark cards, snacks & drinks and many more.",
 
     quickLinks: "Quick Links",
     location: "Location",
     services: "Services",
 
     copyright: "© 2026 Maya X-press. All rights reserved.",
-    city: "Antwerp, Belgium",
+    city: "2100 Deurne, Antwerpen, Belgium",
     designedBy: "Designed & Developed by",
   },
 };
