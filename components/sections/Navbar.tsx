@@ -76,7 +76,7 @@ export function Navbar() {
         <header
             className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 bg-cloud/90 backdrop-blur-sm`}
         >
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8">
+            <div className="mx-auto flex max-w-7xl xl:max-w-400 items-center justify-between px-5 py-3 sm:px-8">
                 <Link href="/" className="flex items-center gap-3 group" aria-label="Maya X-press home">
                     <Image
                         src="/logo.png"
