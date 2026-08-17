@@ -34,12 +34,12 @@ const Services = () => {
     return (
         <section
             id="services"
-            className="relative -mt-40 bg-white pt-20 pb-60"
+            className="relative -mt-50 xl:-mt-40 md:-mt-45 bg-white pt-40 md:pt-35 xl:pt-35 pb-40"
             style={{
                 clipPath: "polygon(0 0, 100% 6%, 100% 100%, 0 100%)",
             }}
         >
-            <div className="mx-auto max-w-7xl px-6 sm:px-8">
+            <div className="mx-auto max-w-7xl xl:max-w-400 px-6 sm:px-8">
                 <div className="mx-auto max-w-3xl text-center">
                     <p className="text-amber">
                         {t.services.badge}

@@ -23,11 +23,11 @@ const Footer = () => {
     };
 
     return (
-        <footer className="relative border-t border-violet/20 bg-navy px-6 pb-8 pt-16 sm:px-8">
+        <footer className="relative border-t border-violet/20 bg-navy px-6 pb-8 pt-20 sm:px-8">
             <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-magenta/50 to-transparent" />
 
             <div className="absolute -top-20 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-magenta/10 blur-3xl" />
-            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+            <div className="mx-auto grid max-w-7xl xl:max-w-400 grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
                 <div className="max-w-sm">
                     <Link href="/" className="flex items-center gap-3 group" aria-label="Maya X-press home">
                         <span className="flex flex-col items-center font-display text-lg sm:text-xl font-bold tracking-tight text-cloud">
@@ -67,7 +67,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-cloud/80">{t.footer.location}</p>
-                    <p className="mt-4 max-w-xs text-sm leading-7 text-mist/75">Frank Craeybeckxlaan 83, 2100 Antwerpen, BELGIUM</p>
+                    <p className="mt-4 max-w-xs text-sm leading-7 text-mist/75">Frank Craeybeckxlaan 83, 2100 Deurne, Antwerpen, BELGIUM</p>
                     <div className="mt-6">
                         <p className="text-xs font-bold uppercase tracking-[0.2em] text-cloud/80">
                             {t.footer.services}
@@ -104,7 +104,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-mist/50 sm:flex-row">
+            <div className="mx-auto mt-12 flex max-w-7xl xl:max-w-400 flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-mist/50 sm:flex-row">
                 <p>{t.footer.copyright}</p>
 
                 <p className="flex items-center gap-1.5">

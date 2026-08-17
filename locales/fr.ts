@@ -11,38 +11,38 @@ export const fr = {
     title: "Une rapidité en laquelle vous pouvez avoir confiance,",
     subtitle: "Le service que vous méritez.",
     description:
-      "Votre magasin de proximité de confiance à Anvers pour les billets de loterie, les services postaux BPOST & DHL, les transferts d'argent RIA, les cartes-cadeaux, les cartes Hallmark, les snacks, les boissons et bien plus encore.",
+      "Votre magasin de proximité de confiance à Deurne, Anvers pour les billets de loterie, les services postaux BPOST & DHL, les transferts d'argent RIA, les cartes-cadeaux, les cartes Hallmark, les snacks, les boissons et bien plus encore.",
     exploreBtn: "Découvrir Nos Services",
     visitBtn: "Visiter Notre Magasin",
   },
 
   about: {
     badge: "À Propos",
-    title: "Votre magasin de quartier de confiance à Anvers",
+    title: "Votre magasin de quartier de confiance à Deurne, Anvers",
     description:
-      "Maya X-press est un magasin local fiable à Anvers qui sert quotidiennement ses clients avec rapidité et convivialité. Nous sommes fiers de soutenir notre quartier grâce à des services essentiels regroupés en un seul endroit.",
+      "Maya X-press est un magasin local fiable à Deurne, Anvers qui sert quotidiennement ses clients avec rapidité et convivialité. Nous sommes fiers de soutenir notre quartier grâce à des services essentiels regroupés en un seul endroit.",
 
     expertiseTitle: "Expertise Locale",
     expertiseDesc:
-      "Des années d'expérience comme magasin de quartier à Anvers",
+      "Des années d'expérience comme magasin de quartier à Deurne, Anvers",
 
     friendlyTitle: "Service Amical",
     friendlyDesc: "Une attention personnalisée pour chaque client",
 
     locationTitle: "Emplacement Central",
-    locationDesc: "Facilement accessible au cœur d'Anvers",
+    locationDesc: "Facilement accessible au cœur d'Deurne, Anvers",
   },
 
   services: {
     badge: "Nos Services",
     title: "Tout ce dont vous avez besoin sous un même toit",
-    description: "Maya X-press offre des services fiables à la communauté d’Anvers.",
+    description: "Maya X-press offre des services fiables à la communauté d’Deurne, Anvers.",
 
     lotteryTitle: "Billets de loto",
     lotteryDesc: "Point de vente officiel de la Loterie Nationale.",
 
     dhlTitle: "DHL Express",
-    dhlDesc: "Point officiel DHL pour le dépôt et le retrait de colis.",
+    dhlDesc: "Point de dépôt et de collecte officiel des colis DHL à Deurne, Anvers.",
 
     bpostTitle: "Services Bpost",
     bpostDesc: "Envoyez et recevez lettres et colis via Bpost.",
@@ -68,14 +68,16 @@ export const fr = {
     review3:
       "Excellent endroit pour envoyer des colis DHL. Service irréprochable !",
     review3Location: "Berchem",
+
+    moreReviews: "clients satisfaits",
   },
 
   contact: {
     badge: "Contact",
-    title: "Visitez Maya X-press à Anvers",
+    title: "Visitez Maya X-press à Deurne, Anvers",
     subtitle: "Contactez-nous pour plus d'informations.",
 
-    address: "Adresse",
+    address: "Adresse de Visite",
     hours: "Heures d'Ouverture",
     phone: "Téléphone",
 
@@ -87,7 +89,7 @@ export const fr = {
 
   footer: {
     description:
-      "Votre magasin de proximité de confiance à Anvers pour les billets de loterie, les services postaux BPOST & DHL, les transferts d'argent RIA, les cartes-cadeaux, les cartes Hallmark, les snacks, les boissons et bien plus encore.",
+      "Votre magasin de proximité de confiance à Deurne, Anvers pour les billets de loterie, les services postaux BPOST & DHL, les transferts d'argent RIA, les cartes-cadeaux, les cartes Hallmark, les snacks, les boissons et bien plus encore.",
 
     quickLinks: "Liens Rapides",
     location: "Localisation",
@@ -95,7 +97,7 @@ export const fr = {
 
     copyright:
       "© 2026 Maya X-press. Tous droits réservés.",
-    city: "Anvers, Belgique",
+    city: "2100 Deurne, Anvers, Belgique",
     designedBy: "Conçu & Développé par",
   },
 };

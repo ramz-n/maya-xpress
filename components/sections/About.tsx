@@ -58,7 +58,7 @@ const About = () => {
         <section
             ref={aboutRef}
             id="about"
-            className="relative bg-purple-dark -mt-40 pt-40 pb-70"
+            className="relative bg-purple-dark -mt-40 pt-50 pb-70 md:pt-35 xl:pt-40"
             style={{
                 clipPath: "polygon(0 6%, 100% 0, 100% 100%, 0 100%)",
             }}
@@ -67,7 +67,7 @@ const About = () => {
                 <div className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-purple-dark/30 blur-[130px]" />
             </div>
 
-            <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+            <div className="relative mx-auto grid max-w-7xl xl:max-w-400 grid-cols-1 gap-16 px-6 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
                 <div className="lg:sticky lg:top-32 lg:self-start">
                     <p className="about-title text-amber">{t.about.badge}</p>
                     <h2 className="about-subtitle mt-4 font-display text-4xl font-bold leading-[1.1] text-cloud sm:text-5xl">
